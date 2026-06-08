@@ -12,6 +12,8 @@
   linkcolor=Accent
 }
 
+\linespread{1.08}
+
 \begin{document}
 
 \begin{minipage}[t]{0.54\textwidth}
@@ -47,22 +49,27 @@ Ph.D. candidate (CIFRE) in Computer Science at Sorbonne University and EURECOM, 
   {Distributed and Parallel Computing Lab, Huawei Paris Research Center}
   {Paris, France}
   {Ph.D. Candidate (CIFRE) and Research Engineer -- LLM Training Systems}
-  {2021 -- 2026 (expected)}
+  {2021 -- end 2026}
 \BulletListStart
   \ResumeBullet{Built cost-model-driven planners for hybrid and pipeline-parallel LLM training, covering stage partitioning, pipeline scheduling, and recomputation selection under memory and performance constraints.}
   \ResumeBullet{Designed symbolic peak-memory estimators, collective-cost models, and overlap-aware strategies for throughput and MFU tuning at large scale.}
   \ResumeBullet{Productionized research prototypes into deployable planning workflows with engineering and customer teams, delivering actionable configuration guidance, debuggable traces, and regression benchmarks across model families and scales.}
   \ResumeBullet{Supported technology transfer from research to production-scale training environments, including deployment feedback on customer workloads and long-sequence training scenarios.}
 \BulletListEnd
-{\fontsize{7.8pt}{8.3pt}\selectfont\color{TextMuted}\textit{Role progression: Research Apprentice (2021--2022) -> Research Engineer (2022--2023) -> CIFRE Ph.D. Candidate (2023--2026).}}
+{\fontsize{7.8pt}{8.3pt}\selectfont\color{TextMuted}\textit{Role progression: Research Apprentice (2021--2022) -> Research Engineer (2022--2023) -> CIFRE Ph.D. Candidate (2023--end 2026).}}
 
-\section*{Selected Impact}
+\section*{Selected Systems \& Results}
 \BulletListStart
-  \ResumeBullet{\textbf{BMPipe} (CLUSTER 2025): symbolic cost model plus ILP search for stage boundaries, chunking, and recomputation; achieved up to 1.36x speedup with 83--92\% HBM utilization, validated on clusters up to 16,384 Ascend NPUs.}
-  \ResumeBullet{\textbf{ManuMatic} (NPC 2025): treated operator shardings as first-class planning constraints; delivered 2.24x on Mixtral-8x7B and 2.04x on Llama3-8B versus D-Rec, plus 30.1\% over an expert-tuned plan on Qwen2.5-72B.}
-  \ResumeBullet{\textbf{H2O} (Euro-Par 2025 Best Poster): two-level workflow for parallelism degrees, micro-batch size, stage mapping, and adaptive recomputation; improved MFU from 26.13\% to 35.73\% and delivered 36.72\% speedup on DeepSeek-141B, then transferred to production with about 1.1x on 4,096-device training and up to 2.37x on long-sequence training at 512 devices.}
-  \ResumeBullet{\textbf{PRISM} (HPC Asia 2026): profiling-free symbolic planner for peak memory and communication; achieved 1.23x--1.43x speedups and raised MFU from 29.40\% to 36.20\%, validated up to 1,024 devices.}
+  \ResumeBullet{\textbf{Prism} (HPC Asia 2026) -- \textbf{predictability via symbolic memory modeling}: profiling-free, layer-level prediction of per-stage peak memory and communication, making memory feasibility a closed-form, retargetable check across model families and clusters.}
+  \ResumeBullet{\textbf{BMPipe} (CLUSTER 2025) -- \textbf{pipeline efficiency}: symbolic bubble model (recomputation / imbalance / preparation) plus ILP over stage boundaries, chunking, and recomputation; up to 1.36x at 83--92\% HBM, validated to 16,384 Ascend NPUs.}
+  \ResumeBullet{\textbf{H2O} (Euro-Par 2025, Best Poster) -- \textbf{holistic all-dimension optimisation}: co-optimises every parallelism dimension with micro-batch and adaptive recomputation in one workflow; MFU 26.13\% to 35.73\% on DeepSeek-141B, transferred to production.}
+  \ResumeBullet{\textbf{Concord} (under submission 2026) -- \textbf{search efficiency}: dependency-keyed per-layer signatures re-plan only what a model or config change invalidates, reusing the rest and cutting redundant search.}
+  \ResumeBullet{\textbf{ManuMatic} (NPC 2025) -- \textbf{adaptability to new operators}: injects pinned operator shardings as first-class constraints so plans stay robust to unmodeled operators and runtime effects; +30.1\% over an expert-tuned plan on Qwen2.5-72B.}
 \BulletListEnd
+
+\section*{Keywords}
+{\fontsize{7.8pt}{8.6pt}\selectfont
+Hybrid parallelism, pipeline scheduling, MoE / expert parallelism, symbolic cost \& peak-memory modeling, ILP / MILP planning, recomputation, communication overlap, MFU optimisation, Ascend NPU, portability / retargeting.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.33\textwidth}
@@ -92,7 +99,7 @@ Three patent families on execution-plan generation, load balancing, and multi-di
 
 \section*{Education}
 {\fontsize{7.8pt}{8.4pt}\selectfont
-\textbf{Sorbonne University \& EURECOM} \hfill \Muted{2023 -- 2026 (expected)}\\
+\textbf{Sorbonne University \& EURECOM} \hfill \Muted{2023 -- end 2026}\\
 \Muted{Ph.D. in Computer Science --- hybrid-parallel training optimisation; adv. Prof. Appuswamy \& Prof. Li}\\[2pt]
 \textbf{Sorbonne University} \hfill \Muted{2019 -- 2022}\\
 \Muted{M.Sc. in Computer Science}\\[2pt]
@@ -107,12 +114,14 @@ Three patent families on execution-plan generation, load balancing, and multi-di
 \CompactListEnd
 
 \section*{Skills}
-{\fontsize{7.8pt}{8.4pt}\selectfont
+{\fontsize{7.8pt}{8.6pt}\selectfont
+\textbf{Parallelism:} data, tensor, pipeline, virtual-pipeline, sequence, expert, optimiser\\
+\textbf{Optimisation:} ILP / MILP, constraint programming, symbolic cost \& peak-memory modeling\\
 \textbf{Programming:} Python, C++, Java\\
 \textbf{ML frameworks:} MindSpore, PyTorch\\
-\textbf{Platforms:} large-scale GPU/NPU clusters and cloud\\
-\textbf{Tooling:} Ascend profiling, tracing, performance regression benchmarking\\
-\textbf{Development:} Linux, Git}
+\textbf{Platforms:} large-scale GPU/NPU clusters (to 16k), cloud\\
+\textbf{Tooling:} Ascend profiling, tracing, regression benchmarking; Linux, Git\\
+\textbf{Languages:} Chinese (native), English (fluent), French (fluent), Cantonese}
 \end{minipage}
 
 \end{document}

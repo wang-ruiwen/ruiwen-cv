@@ -4,23 +4,23 @@
 % 字体: 默认使用 fandol 字体 (随 TeX 发行版自带, 跨平台均可编译)。
 %       若在 Windows 上偏好系统字体 (宋体 SimSun / 黑体 SimHei), 将 fontset=fandol 改为 fontset=windows。
 %-------------------------------------
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 \usepackage[UTF8, fontset=fandol, scheme=plain]{ctex}
-\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage[a4paper,left=1.6cm,right=1.6cm,top=1.2cm,bottom=1.2cm]{geometry}
 \usepackage{myresume_cjk}
 \usepackage[unicode]{hyperref}
 \hypersetup{colorlinks=true, urlcolor=Accent, linkcolor=Accent}
 
-\linespread{1.02}
+\linespread{1.12}
 
 \begin{document}
 
 % -------------------- 抬头 --------------------
 \begin{minipage}[t]{0.60\textwidth}
-  \ResumeName{王瑞文}\;\ResumeNameEn{Ruiwen Wang}\\[4pt]
+  \ResumeName{王锐文}\;\ResumeNameEn{Ruiwen Wang}\\[4pt]
   \ResumeRole{AI 基础设施 \textperiodcentered{} 大模型预训练 \textperiodcentered{} 混合并行}\\[3pt]
-  {\small\color{TextMuted}索邦大学 \& EURECOM \;|\; 华为巴黎研究所联合培养 (CIFRE) \;|\; 预计 2026 年 8 月毕业}
+  {\small\color{TextMuted}索邦大学 \& EURECOM \;|\; 华为巴黎研究所联合培养 (CIFRE) \;|\; 预计 2026 年底毕业}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.38\textwidth}
@@ -32,54 +32,48 @@
   \href{https://github.com/wang-ruiwen}{GitHub} \;\textperiodcentered\; \href{https://www.linkedin.com/in/ruiwen-wang-ai/}{LinkedIn} \;\textperiodcentered\; \href{https://orcid.org/0009-0000-6709-5970}{ORCID}
 \end{minipage}
 
-\vspace{8pt}
+\vspace{6pt}
 \AccentRule
 
 % -------------------- 个人简介 --------------------
 \cvsection{个人简介}
 \small
-计算机科学博士研究生（CIFRE 产学联合培养），就读于索邦大学（Sorbonne University）与 EURECOM，并与华为巴黎研究所联合开展研究，预计 2026 年 8 月毕业。研究方向位于人工智能（AI）、高性能计算（HPC）与机器学习系统（MLSys）的交叉领域，聚焦于面向超大规模 LLM/DNN 训练的高效、可靠的优化式策略规划。构建符号化的性能与显存模型，并结合整数线性规划（ILP）与约束求解，自动生成显存可行、通信感知的混合并行策略与流水线调度方案。研究成果发表于 CLUSTER、Euro-Par（最佳海报奖）、NPC、HPC Asia 等会议，并在最多 16,384 张 Ascend NPU 的生产集群上完成验证，已转化为可落地的规划流程，连接系统底层研究与真实训练基础设施。
+计算机科学博士研究生（CIFRE 产学联合培养），就读于索邦大学与 EURECOM，并与华为巴黎研究所联合开展研究，预计 2026 年底毕业。研究位于人工智能（AI）、高性能计算（HPC）与机器学习系统（MLSys）交叉领域，设计符号化、优化驱动的规划器，把大规模混合并行 LLM/DNN 训练化为可预测、可移植的决策问题——生成显存可行、通信感知的并行策略与流水线调度，并在最多 16,384 张 Ascend NPU 的生产集群上验证。已产出 4 篇第一作者论文（CLUSTER、Euro-Par 最佳海报、NPC、HPC Asia）、1 篇在投、合作的大规模 MoE 训练工作，以及 3 项专利，多项已转化到生产。
 
-% -------------------- 研究专长 --------------------
-\cvsection{研究专长}
-\small 博士论文：《面向大规模分布式训练的混合并行系统化与可移植优化》（索邦大学，EDITE ED 130 博士学院）。以 Transformer 单层为统一推理单元，构建“行为级”规划工作流，回答\textbf{如何高效地为大规模混合并行训练做规划}。四项能力，各由一个系统实现：
+% -------------------- 博士研究 --------------------
+\cvsection{博士研究}
+\small 博士论文：《面向大规模分布式训练的混合并行系统化与可移植优化》（索邦大学，EDITE ED 130 博士学院）。以单一的逐层（Transformer）代价单元构建可移植的“行为级”规划工作流，覆盖全部七个并行维度（数据 / 张量 / 流水线 / 虚拟流水线 / 序列 / 专家 / 优化器），使大规模混合并行规划具备\textbf{可预测性}（PRISM）、\textbf{互操作性}（BMPipe + H2O）、\textbf{可演进性}（Concord）与\textbf{自适应性}（ManuMatic）。该单元将模型、硬件与并行描述解耦，使方案在执行前即可预测、并可跨 GPU/NPU 集群移植；已在 Mixtral-8$\times$7B、Llama3-8B、Qwen2.5-72B、DeepSeek-141B 等模型、从数十卡到 16,384 张 Ascend NPU 集群（含长序列场景）上验证。
+
+% -------------------- 代表系统与成果 --------------------
+\cvsection{代表系统与成果}
 \itemListStart
-  \myItem{\textbf{可预测性 —— PRISM}：层级符号化代价曲面，从模型、训练配置与硬件描述预测算力、峰值显存与通信，无需性能采样。}
-  \myItem{\textbf{互操作性 —— BMPipe + H2O}：将规划分解为内层调度/显存问题与外层并行度选择（数据/张量/流水线/虚拟流水线/序列/专家/优化器），并以 ILP/MILP 联合求解。}
-  \myItem{\textbf{可演进性 —— Concord}：保持有效性的复用契约，仅对模型或配置变更失效的部分重新规划，避免从零重启。}
-  \myItem{\textbf{自适应性 —— ManuMatic}：运行时策略注入，当实际执行偏离所用抽象模型时修正规划决策。}
+  \myItem{\textbf{PRISM —— 以符号化显存建模实现可预测性}（HPC Asia 2026）：免性能采样的层级代价曲面，直接从模型、训练配置与硬件描述解析预测各阶段\emph{峰值显存}与通信，把显存可行性从反复试错变为可移植、可跨 GPU/NPU 集群复用的闭式判断。}
+  \myItem{\textbf{BMPipe —— 主攻流水线效率}（IEEE CLUSTER 2025）：以符号化气泡模型（重计算 / 阶段不均衡 / 预备气泡）结合 ILP，联合确定阶段边界、阶段内分块与逐层重计算，压缩流水线空泡；吞吐最高 1.36$\times$，HBM 利用率 83\textendash92\%，验证至 16,384 张 Ascend NPU。}
+  \myItem{\textbf{H2O —— 全维度联合优化}（Euro-Par 2025 最佳海报奖）：在单一工作流中联合优化各并行维度的并行度、微批大小与自适应重计算，而非逐项分别调参；DeepSeek-141B 上 MFU 26.13\%$\to$35.73\%，并已转化到生产训练。}
+  \myItem{\textbf{Concord —— 以复用提升搜索效率}（审稿中 2026）：依赖键控的逐层签名精确定位模型 / 配置改动所失效的规划部分，使重规划只重算失效项、复用其余有效结果，避免冗余搜索，加速模型与策略的迭代协同设计。}
+  \myItem{\textbf{ManuMatic —— 面向新算子与运行时影响的自适应}（NPC 2025）：将用户 / 运行时指定的算子切分作为一等约束注入自动搜索，当出现抽象模型未覆盖的新算子或新影响时仍保持稳健；在纯自动搜索退化处恢复优质方案（如 Qwen2.5-72B 上较专家调优方案 +30.1\%）。}
 \itemListEnd
 
 % -------------------- 工作经历 --------------------
 \cvsection{工作经历}
 \cventry
   {华为巴黎研究所 \textemdash{} 分布式与并行计算实验室}{法国，巴黎}
-  {博士研究生（CIFRE）兼研究工程师 \textemdash{} 大模型训练系统}{2021 \textemdash{} 2026（预计）}
+  {博士研究生（CIFRE）兼研究工程师 \textemdash{} 大模型训练系统}{2021 \textemdash{} 2026 年底}
 \itemListStart
   \myItem{构建基于代价模型的混合 / 流水线并行 LLM 训练规划器：在显存与性能约束下完成阶段划分、流水线调度与重计算选择。}
   \myItem{设计符号化峰值显存估计与集合通信代价模型，结合通信-计算重叠策略，进行大规模吞吐与 MFU 调优。}
-  \myItem{将研究原型产品化为可部署的规划流程，与工程及客户团队协作，提供可操作的配置建议、可调试的执行轨迹与跨模型 / 跨规模的回归基准。}
-  \myItem{推动研究成果向生产级训练环境的技术转化，包括在客户负载与长序列训练场景中的部署反馈闭环。}
+  \myItem{将研究原型产品化为可部署的规划流程，与工程及客户团队协作：配置建议、可调试执行轨迹与跨模型 / 跨规模的回归基准。}
+  \myItem{推动研究成果向生产级训练环境转化，包括客户负载与长序列训练的部署反馈（中国电信就 DeepSeek-MoE 优化致感谢信）。}
+  \myItem{建模 MoE / 专家并行与长序列训练：专家归属约束、负载均衡，以及序列 / 虚拟流水线调度。}
 \itemListEnd
-{\footnotesize\color{TextMuted}角色演进：研究学徒（2021\textendash2022）$\rightarrow$ 研究工程师（2022\textendash2023）$\rightarrow$ CIFRE 博士研究生（2023\textendash2026）。}
+{\footnotesize\color{TextMuted}角色演进：研究学徒（2021\textendash2022）$\rightarrow$ 研究工程师（2022\textendash2023）$\rightarrow$ CIFRE 博士研究生（2023\textendash2026 年底）。}
 
-% -------------------- 代表性成果 --------------------
-\cvsection{代表性成果}
-\cvline{BMPipe：流水线气泡-显存协同优化规划器（CLUSTER 2025）}{2023 \textemdash{} 2024}
+% -------------------- 生产落地与协作 --------------------
+\cvsection{生产落地与协作}
 \itemListStart
-  \myItem{以符号代价模型结合 ILP 搜索，联合优化阶段边界、阶段内分块与逐层重计算；最高 1.36$\times$ 加速，HBM 利用率 83\textendash92\%，在最多 16,384 张 Ascend NPU 集群上验证。}
-\itemListEnd
-\cvline{ManuMatic：面向稳健自动混合并行的策略注入（NPC 2025）}{2024}
-\itemListStart
-  \myItem{将用户提供的算子切分作为一等规划约束，实现稳健的“手动 + 自动”搜索；相较 D-Rec 在 Mixtral-8$\times$7B 上 2.24$\times$、Llama3-8B 上 2.04$\times$，在 Qwen2.5-72B 上较专家调优方案提升 30.1\%。}
-\itemListEnd
-\cvline{H2O：两级规划与部署工作流（Euro-Par 2025 最佳海报奖）}{2025}
-\itemListStart
-  \myItem{先搜索并行度与微批大小，再细化层-阶段映射与自适应重计算；将 MFU 从 26.13\% 提升至 35.73\%，在 DeepSeek-141B 上加速 36.72\%，并转化到生产部署（4{,}096 卡训练约 1.1$\times$，512 卡长序列训练最高 2.37$\times$）。}
-\itemListEnd
-\cvline{PRISM：免性能剖析的符号化策略规划器（HPC Asia 2026）}{2025}
-\itemListStart
-  \myItem{无需性能采样即可预测峰值显存与通信，并在统一目标下搜索混合并行策略；1.23$\times$\textendash1.43$\times$ 加速，MFU 从 29.40\% 提升至 36.20\%，在最多 1{,}024 卡上验证。}
+  \myItem{将规划器生成的策略转化到生产训练：4{,}096 卡训练端到端约 1.1$\times$，512 卡长序列训练最高 2.37$\times$。}
+  \myItem{参与大规模 DeepSeek-MoE 训练优化的部署，在真实客户负载与超大规模集群上形成反馈闭环。}
+  \myItem{跨研究、工程与客户平台团队协作；构建可复现的基准测试与可调试轨迹，使规划决策在生产中可信。}
 \itemListEnd
 
 % -------------------- 论文发表 --------------------
@@ -108,17 +102,23 @@
 \cvsection{教育背景}
 \cventry
   {索邦大学 \& EURECOM}{法国，巴黎}
-  {计算机科学博士；导师：Prof. Raja Appuswamy、Prof. Chong Li}{2023 \textemdash{} 2026（预计）}
+  {计算机科学博士 \textemdash{} EDITE ED 130 博士学院；导师：Prof. Raja Appuswamy、Prof. Chong Li}{2023 \textemdash{} 2026 年底}
 \itemListStart
-  \myItem{博士论文：面向大规模分布式训练的混合并行系统化与可移植优化（EDITE ED 130 博士学院）。}
+  \myItem{博士论文：面向大规模分布式训练的混合并行系统化与可移植优化。}
 \itemListEnd
 \cventry
   {索邦大学}{法国，巴黎}
-  {计算机科学硕士；导师：Prof. Emmanuel Chailloux、Prof. Jacques Malenfant}{2019 \textemdash{} 2022}
+  {计算机科学硕士 \textemdash{} 算法、软件科学与技术；导师：Prof. Emmanuel Chailloux、Prof. Jacques Malenfant}{2019 \textemdash{} 2022}
+\cventry
+  {巴黎-萨克雷大学}{法国，巴黎}
+  {计算机科学学士}{2016 \textemdash{} 2019}
 \itemListStart
-  \myItem{方向：算法、软件科学与技术。}
+  \myItem{早期研究受 Prof. Isabelle Guyon、Dr. Viviane Pons、Dr. Zhengying Liu 指导。}
 \itemListEnd
-\cvline{巴黎-萨克雷大学 \textemdash{} 计算机科学学士（法国，巴黎）}{2016 \textemdash{} 2019}
+
+% -------------------- 关键词 --------------------
+\cvsection{关键词}
+\small 混合并行 \textperiodcentered\ 流水线调度 \textperiodcentered\ MoE / 专家并行 \textperiodcentered\ 符号化代价与峰值显存建模 \textperiodcentered\ ILP / MILP 规划 \textperiodcentered\ 重计算 \textperiodcentered\ 通信重叠 \textperiodcentered\ MFU 优化 \textperiodcentered\ Ascend NPU \textperiodcentered\ 可移植 / 重定向
 
 % -------------------- 荣誉奖项 --------------------
 \cvsection{荣誉奖项}
@@ -133,12 +133,12 @@
 \begin{multicols}{2}
 \raggedright
 \skillListStart
+  \item \textbf{并行}：数据、张量、流水线、虚拟流水线、序列、专家、优化器
+  \item \textbf{优化}：ILP / MILP、约束规划、符号化代价与峰值显存建模
   \item \textbf{编程语言}：Python、C++、Java
   \item \textbf{机器学习框架}：MindSpore、PyTorch
-  \item \textbf{平台}：大规模 GPU/NPU 集群与云
-  \item \textbf{工具}：Ascend 性能剖析、tracing、性能回归基准测试
-  \item \textbf{开发}：Linux、Git
-  \item \textbf{语言}：中文（母语）、英语（流利）、法语（流利）、粤语
+  \item \textbf{平台}：大规模 GPU / NPU 集群（至 16k）与云
+  \item \textbf{工具 / 开发}：Ascend 性能剖析、tracing、性能回归基准；Linux、Git
 \skillListEnd
 \end{multicols}
 

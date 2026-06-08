@@ -4,79 +4,85 @@
 % 字体: 默认使用 fandol 字体 (随 TeX 发行版自带, 跨平台均可编译)。
 %       若在 Windows 上偏好系统字体 (宋体 SimSun / 黑体 SimHei), 将 fontset=fandol 改为 fontset=windows。
 %-------------------------------------
-\documentclass[a4paper,9pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 \usepackage[UTF8, fontset=fandol, scheme=plain]{ctex}
-\usepackage[a4paper,left=1.4cm,right=1.4cm,top=1.0cm,bottom=1.0cm]{geometry}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1.1cm,bottom=1.1cm]{geometry}
 \usepackage{myresume_cjk}
 \usepackage[unicode]{hyperref}
 \hypersetup{colorlinks=true, urlcolor=Accent, linkcolor=Accent}
 
-\linespread{0.98}
-% 一页版: 适当压缩段落间距
+\linespread{1.16}
+% 一页版: 段落间距
 \renewcommand{\cvsection}[1]{%
-  \par\vspace{5pt}%
-  {\heiti\fontsize{12pt}{13pt}\selectfont\color{Accent}#1}\par
-  \vspace{1.5pt}{\color{RuleColor}\hrule height 0.6pt}\vspace{3.5pt}%
+  \par\vspace{6pt}%
+  {\heiti\fontsize{13pt}{14pt}\selectfont\color{Accent}#1}\par
+  \vspace{2pt}{\color{RuleColor}\hrule height 0.6pt}\vspace{4pt}%
 }
 
 \begin{document}
 
 % -------------------- 抬头 --------------------
-\begin{minipage}[t]{0.58\textwidth}
-  \ResumeName{王瑞文}\;\ResumeNameEn{Ruiwen Wang}\\[3pt]
+\begin{minipage}[t]{0.60\textwidth}
+  \ResumeName{王锐文}\;\ResumeNameEn{Ruiwen Wang}\\[3pt]
   \ResumeRole{AI 基础设施 \textperiodcentered{} 大模型预训练 \textperiodcentered{} 混合并行}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.40\textwidth}
   \raggedleft\footnotesize\color{TextMuted}
   法国，巴黎 \;|\; (+33) 663113466\\
-  \href{mailto:wangrw0124@gmail.com}{wangrw0124@gmail.com} \;|\; 国籍：法国\\
+  \href{mailto:wangrw0124@gmail.com}{wangrw0124@gmail.com} \;|\; 预计 2026 年底毕业\\
   \href{http://ruiwen.wang/}{ruiwen.wang} \textperiodcentered\ \href{https://scholar.google.com/citations?user=AR1nHEUAAAAJ}{Scholar} \textperiodcentered\ \href{https://github.com/wang-ruiwen}{GitHub} \textperiodcentered\ \href{https://www.linkedin.com/in/ruiwen-wang-ai/}{LinkedIn}
 \end{minipage}
 
-\vspace{6pt}
+\vspace{5pt}
 \AccentRule
 
 % -------------------- 个人简介 --------------------
 \cvsection{个人简介}
-\footnotesize
-计算机科学博士研究生（CIFRE 产学联合培养），就读于索邦大学与 EURECOM，并与华为巴黎研究所联合开展研究，预计 2026 年 8 月毕业。研究位于 AI、高性能计算（HPC）与机器学习系统（MLSys）交叉领域，聚焦超大规模 LLM/DNN 训练的优化式策略规划：以符号化性能 / 显存模型结合 ILP 与约束求解，自动生成显存可行、通信感知的混合并行策略与流水线调度。成果发表于 CLUSTER、Euro-Par（最佳海报奖）、NPC、HPC Asia，并在最多 16,384 张 Ascend NPU 的生产集群上验证落地。博士论文将其统一为一套可移植的规划工作流——预测、联合优化、重规划、自适应。
+\small
+计算机科学博士研究生（CIFRE 产学联合培养），就读于索邦大学与 EURECOM，并与华为巴黎研究所联合开展研究，预计 2026 年底毕业。研究位于 AI、高性能计算（HPC）与机器学习系统（MLSys）交叉领域：以符号化、优化驱动的规划器，把超大规模混合并行 LLM/DNN 训练化为可预测、可移植的决策问题，生成显存可行、通信感知的策略与流水线调度，并在最多 16,384 张 Ascend NPU 的生产集群上验证。博士论文将其统一为一套可移植规划工作流——预测、联合优化、重规划、自适应。
 
 % -------------------- 工作经历 --------------------
 \cvsection{工作经历}
 \cventry
   {华为巴黎研究所 \textemdash{} 分布式与并行计算实验室}{法国，巴黎}
-  {博士研究生（CIFRE）兼研究工程师 \textemdash{} 大模型训练系统}{2021 \textemdash{} 2026（预计）}
+  {博士研究生（CIFRE）兼研究工程师 \textemdash{} 大模型训练系统}{2021 \textemdash{} 2026 年底}
 \itemListStart
   \myItem{构建基于代价模型的混合 / 流水线并行 LLM 训练规划器：显存与性能约束下的阶段划分、流水线调度与重计算选择。}
-  \myItem{设计符号化峰值显存估计与集合通信代价模型，结合通信-计算重叠策略，进行大规模吞吐与 MFU 调优。}
-  \myItem{将研究原型产品化为可部署规划流程，与工程及客户团队协作落地；推动研究向生产级训练环境的技术转化。}
+  \myItem{设计符号化峰值显存估计与集合通信代价模型，结合通信-计算重叠，进行大规模吞吐与 MFU 调优。}
+  \myItem{将研究原型产品化为可部署规划流程，与工程及客户团队协作落地；推动向生产级训练环境的技术转化。}
+  \myItem{建模 MoE / 专家并行与长序列训练：专家归属约束、负载均衡，以及序列 / 虚拟流水线调度。}
 \itemListEnd
-{\footnotesize\color{TextMuted}角色演进：研究学徒（2021\textendash2022）$\rightarrow$ 研究工程师（2022\textendash2023）$\rightarrow$ CIFRE 博士研究生（2023\textendash2026）。}
+{\footnotesize\color{TextMuted}角色演进：研究学徒（2021\textendash2022）$\rightarrow$ 研究工程师（2022\textendash2023）$\rightarrow$ CIFRE 博士研究生（2023\textendash2026 年底）。}
 
-% -------------------- 核心成果 --------------------
-\cvsection{核心成果}
+% -------------------- 核心成果（五个系统，各有侧重）--------------------
+\cvsection{核心成果（博士论文：可移植规划工作流，覆盖七个并行维度）}
 \itemListStart
-  \myItem{\textbf{BMPipe}（CLUSTER 2025）：符号代价模型 + ILP 联合优化阶段边界 / 分块 / 重计算；最高 1.36$\times$ 加速，HBM 利用率 83\textendash92\%，验证至 16{,}384 张 Ascend NPU。}
-  \myItem{\textbf{ManuMatic}（NPC 2025）：算子切分作为一等规划约束；相较 D-Rec 在 Mixtral-8$\times$7B 上 2.24$\times$、Llama3-8B 上 2.04$\times$，Qwen2.5-72B 上较专家方案 +30.1\%。}
-  \myItem{\textbf{H2O}（Euro-Par 2025 最佳海报奖）：两级规划工作流；MFU 26.13\%$\rightarrow$35.73\%，DeepSeek-141B 加速 36.72\%，并转生产（4{,}096 卡约 1.1$\times$，512 卡长序列最高 2.37$\times$）。}
-  \myItem{\textbf{PRISM}（HPC Asia 2026）：免性能剖析的符号化规划器；1.23$\times$\textendash1.43$\times$ 加速，MFU 29.40\%$\rightarrow$36.20\%，验证至 1{,}024 卡。}
+  \myItem{\textbf{PRISM}（HPC Asia 2026，\emph{可预测性 / 显存}）：免性能采样地解析预测各阶段峰值显存与通信，使显存可行性成为可移植、跨集群复用的闭式判断。}
+  \myItem{\textbf{BMPipe}（CLUSTER 2025，\emph{流水线效率}）：符号化气泡模型 + ILP 联合优化阶段边界 / 分块 / 重计算，压缩空泡；1.36$\times$，HBM 83\textendash92\%，验证至 16,384 张 Ascend NPU。}
+  \myItem{\textbf{H2O}（Euro-Par 2025 最佳海报奖，\emph{全维度联合优化}）：单一工作流联合优化所有并行维度 + 微批 + 自适应重计算；DeepSeek-141B 上 MFU 26.13\%$\to$35.73\%，并转生产。}
+  \myItem{\textbf{Concord}（审稿中 2026，\emph{搜索效率 / 减少冗余}）：依赖键控逐层签名只重算模型 / 配置改动失效的部分、复用其余，避免冗余搜索。}
+  \myItem{\textbf{ManuMatic}（NPC 2025，\emph{面向新算子的自适应}）：将算子切分作为一等约束注入自动搜索，对未建模的新算子 / 影响保持稳健；Qwen2.5-72B 上较专家方案 +30.1\%。}
 \itemListEnd
 
 % -------------------- 论文与专利 --------------------
 \cvsection{论文与专利}
 \footnotesize
-\textbf{论文（第一/共同作者，节选）}：BMPipe（IEEE CLUSTER 2025）；H2O（Euro-Par 2025，最佳海报奖）；ManuMatic（NPC 2025）；PRISM 与 MLLM Pipeline Bubble Modeling（HPC Asia 2026）；Concord（依赖键控重规划，审稿中 2026）；Training Report of TeleChat3-MoE（arXiv:2512.24157）。\par
+\textbf{论文（第一 / 共同作者，节选）}：BMPipe（IEEE CLUSTER 2025）；H2O（Euro-Par 2025，最佳海报奖）；ManuMatic（NPC 2025）；PRISM 与 MLLM Pipeline Bubble Modeling（HPC Asia 2026）；Concord（依赖键控重规划，审稿中 2026）；Training Report of TeleChat3-MoE（arXiv:2512.24157）。\par
 \vspace{2pt}
-\textbf{专利}：3 项 —— 机器学习模型执行计划生成（WO 2025/020165 A1）、大模型负载均衡方法、大模型训练多维并行配置方法。
+\textbf{专利（3 项）}：机器学习模型执行计划生成（WO 2025/020165 A1）、大模型负载均衡方法、大模型训练多维并行配置方法。
 
 % -------------------- 教育背景 --------------------
 \cvsection{教育背景}
 \footnotesize
-\textbf{索邦大学 \& EURECOM} —— 计算机科学博士（混合并行系统化与可移植优化；导师 Prof. Appuswamy、Prof. Chong Li）\hfill {\color{TextMuted}2023 \textemdash{} 2026（预计）}\\
+\textbf{索邦大学 \& EURECOM} —— 计算机科学博士（混合并行系统化与可移植优化；EDITE ED 130；导师 Prof. Appuswamy、Prof. Chong Li）\hfill {\color{TextMuted}2023 \textemdash{} 2026 年底}\\
 \textbf{索邦大学} —— 计算机科学硕士（算法、软件科学与技术）\hfill {\color{TextMuted}2019 \textemdash{} 2022}\\
-\textbf{巴黎-萨克雷大学} —— 计算机科学学士 \hfill {\color{TextMuted}2016 \textemdash{} 2019}
+\textbf{巴黎-萨克雷大学} —— 计算机科学学士（早期研究受 Prof. Guyon、Dr. Pons、Dr. Liu 指导）\hfill {\color{TextMuted}2016 \textemdash{} 2019}
+
+% -------------------- 关键词 --------------------
+\cvsection{关键词}
+\footnotesize 混合并行 \textperiodcentered\ 流水线调度 \textperiodcentered\ MoE / 专家并行 \textperiodcentered\ 符号化代价与峰值显存建模 \textperiodcentered\ ILP / MILP \textperiodcentered\ 重计算 \textperiodcentered\ 通信重叠 \textperiodcentered\ MFU 优化 \textperiodcentered\ Ascend NPU \textperiodcentered\ 可移植
 
 % -------------------- 荣誉 与 技能 --------------------
 \begin{minipage}[t]{0.48\textwidth}
@@ -92,8 +98,8 @@
 \cvsection{技能}
 \footnotesize
 \textbf{编程}：Python、C++、Java\\
-\textbf{框架/平台}：MindSpore、PyTorch；大规模 GPU/NPU 集群与云\\
-\textbf{工具/开发}：Ascend 性能剖析、tracing、性能基准；Linux、Git\\
+\textbf{框架 / 平台}：MindSpore、PyTorch；大规模 GPU/NPU 集群（至 16k）与云\\
+\textbf{工具 / 开发}：Ascend 性能剖析、tracing、性能基准；Linux、Git\\
 \textbf{语言}：中文（母语）、英语、法语、粤语
 \end{minipage}
 
