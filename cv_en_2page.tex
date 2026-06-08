@@ -54,7 +54,7 @@ Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University and EURECOM, 
 }
 
 \sectionBlock{Doctoral Research}{
-\small \textbf{Thesis} --- \textit{Systematic and Portable Optimisation of Hybrid Parallelism for Large-Scale Distributed Training} (Sorbonne University, doctoral school EDITE ED 130). A portable, behaviour-level planning workflow built on a single per-layer (Transformer) cost unit that spans all seven parallelism dimensions --- data, tensor, pipeline, virtual-pipeline, sequence, expert, and optimiser --- and makes large-scale hybrid-parallel planning \textbf{predictable} (Prism), \textbf{interoperable} (BMPipe\,+\,H2O), \textbf{evolvable} (Concord), and \textbf{adaptable} (ManuMatic). The unit separates model, hardware, and parallelisation descriptions so a plan can be predicted before execution and retargeted across GPU/NPU clusters. Validated across model families --- Mixtral-8$\times$7B, Llama3-8B, Qwen2.5-72B, DeepSeek-141B --- on Ascend NPU clusters from tens to 16,384 devices, including long-sequence regimes.
+\small \textbf{Thesis} --- \textit{Systematic and Portable Optimisation of Hybrid Parallelism for Large-Scale Distributed Training} (Sorbonne University). A portable, behaviour-level planning workflow built on a single per-layer (Transformer) cost unit that spans all seven parallelism dimensions --- data, tensor, pipeline, virtual-pipeline, sequence, expert, and optimiser --- and makes large-scale hybrid-parallel planning \textbf{predictable} (Prism), \textbf{interoperable} (BMPipe\,+\,H2O), \textbf{evolvable} (Concord), and \textbf{adaptable} (ManuMatic). The unit separates model, hardware, and parallelisation descriptions so a plan can be predicted before execution and retargeted across GPU/NPU clusters. Validated across model families --- Mixtral-8$\times$7B, Llama3-8B, Qwen2.5-72B, DeepSeek-141B --- on Ascend NPU clusters from tens to 16,384 devices, including long-sequence regimes.
 }
 
 \sectionBlock{Selected Systems \& Results}{
@@ -74,11 +74,11 @@ Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University and EURECOM, 
   {Ph.D. Candidate (CIFRE) and Research Engineer -- LLM Training Systems}
   {2021 -- end 2026}
 \itemListStart
-  \myItem{Built cost-model-driven planners for hybrid and pipeline-parallel LLM training: stage partitioning, pipeline scheduling, and recomputation selection under joint memory and performance constraints.}
-  \myItem{Designed symbolic peak-memory estimators and collective-cost models, with overlap-aware strategies for throughput and MFU tuning at large scale.}
-  \myItem{Translated prototypes into deployable planning workflows with engineering and customer teams: configuration guidance, debuggable traces, and regression benchmarks across model families and scales.}
-  \myItem{Drove research-to-production transfer onto production-scale training, including deployment feedback on customer workloads and long-sequence training (recognised by China Telecom for DeepSeek-MoE optimisation).}
-  \myItem{Modelled MoE / expert-parallel and long-sequence training: expert-ownership constraints, load balancing, and sequence / virtual-pipeline scheduling.}
+  \myItem{Built cost-model-driven planners for hybrid and pipeline-parallel training: searching stage partitioning, pipeline scheduling, and recomputation strategies.}
+  \myItem{Designed symbolic peak-memory and collective-communication cost models for pre-execution feasibility and performance prediction.}
+  \myItem{Ran memory and performance analysis and profiling: operator-level profiling, memory and communication footprint analysis, and bottleneck localization to guide throughput and MFU tuning.}
+  \myItem{Built debuggable traces and cross-model, cross-scale regression benchmarks supporting reproducible evaluation and configuration guidance.}
+  \myItem{Productionized prototypes into deployable planning workflows with engineering and customer teams, driving transfer to production-scale training.}
 \itemListEnd
 {\footnotesize\color{TextMuted}\textit{Role progression: Research Apprentice (2021--2022) -> Research Engineer (2022--2023) -> CIFRE Ph.D. Candidate (2023--end 2026).}}
 }
@@ -86,7 +86,7 @@ Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University and EURECOM, 
 \sectionBlock{Production Impact \& Collaboration}{
 \itemListStart
   \myItem{Transferred planner-derived strategies to production training: about 1.1$\times$ end-to-end on 4,096-device runs and up to 2.37$\times$ on long-sequence training at 512 devices.}
-  \myItem{Contributed to large-scale DeepSeek-MoE training optimisation in deployment, with feedback loops on real customer workloads and ultra-scale clusters.}
+  \myItem{Contributed to large-scale TeleChat3-MoE training optimisation in deployment, with feedback loops on real customer workloads and ultra-scale clusters.}
   \myItem{Worked across research, engineering, and customer-facing platform teams; built reproducible benchmarking and debuggable traces that kept planner decisions trustworthy in operation.}
 \itemListEnd
 }
@@ -116,7 +116,7 @@ Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University and EURECOM, 
 \sectionBlock{Education}{
 \cvEntry
   {Sorbonne University \& EURECOM}{Paris, France}
-  {Ph.D. in Computer Science -- doctoral school EDITE (ED 130)}{2023 -- end 2026}
+  {Ph.D. in Computer Science}{2023 -- end 2026}
 \itemListStart
   \myItem{Thesis: Systematic and Portable Optimisation of Hybrid Parallelism for Large-Scale Distributed Training; supervisors Prof. Raja Appuswamy and Prof. Chong Li.}
 \itemListEnd
@@ -142,7 +142,7 @@ Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University and EURECOM, 
 \awardListStart
   \item \small \emph{Golden Prize}, Huawei Challenge Award for Automatic Load Balancing \hfill 2024.08
   \item \small \emph{Best Poster Award}, Euro-Par conference \hfill 2025.08
-  \item \small \emph{Letter of Appreciation}, China Telecom for DeepSeek-MoE training optimization deployment \hfill 2025.12
+  \item \small \emph{Letter of Appreciation}, China Telecom for TeleChat3-MoE deployment \hfill 2025.12
 \awardListEnd
 }
 
@@ -160,7 +160,7 @@ Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University and EURECOM, 
 \skillListStart
   \item \textbf{ML stacks}: MindSpore, PyTorch; Ascend NPU / GPU clusters (to 16k), cloud
   \item \textbf{Tooling}: Ascend profiling, tracing, performance regression benchmarking; Linux, Git
-  \item \textbf{Languages}: Chinese (native), English (fluent), French (fluent), Cantonese
+  \item \textbf{Languages}: Chinese, English (fluent), French (fluent), Cantonese
 \skillListEnd
 \end{minipage}
 }

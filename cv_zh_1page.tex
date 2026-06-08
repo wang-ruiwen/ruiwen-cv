@@ -49,15 +49,15 @@
   {华为巴黎研究所 \textemdash{} 分布式与并行计算实验室}{法国，巴黎}
   {博士研究生（CIFRE）兼研究工程师 \textemdash{} 大模型训练系统}{2021 \textemdash{} 2026 年底}
 \itemListStart
-  \myItem{构建基于代价模型的混合 / 流水线并行 LLM 训练规划器：显存与性能约束下的阶段划分、流水线调度与重计算选择。}
-  \myItem{设计符号化峰值显存估计与集合通信代价模型，结合通信-计算重叠，进行大规模吞吐与 MFU 调优。}
-  \myItem{将研究原型产品化为可部署规划流程，与工程及客户团队协作落地；推动向生产级训练环境的技术转化。}
-  \myItem{建模 MoE / 专家并行与长序列训练：专家归属约束、负载均衡，以及序列 / 虚拟流水线调度。}
+  \myItem{构建基于代价模型的混合 / 流水线并行训练规划器：搜索阶段划分、流水线调度与重计算策略。}
+  \myItem{设计符号化峰值显存与集合通信代价模型，支撑执行前的可行性判断与性能预测。}
+  \myItem{开展显存与性能分析及 profiling：算子级性能剖析、显存 / 通信占用分析与瓶颈定位，指导吞吐与 MFU 调优。}
+  \myItem{将研究原型产品化为可部署规划流程，与工程及客户团队协作，推动向生产级训练环境的技术转化。}
 \itemListEnd
 {\footnotesize\color{TextMuted}角色演进：研究学徒（2021\textendash2022）$\rightarrow$ 研究工程师（2022\textendash2023）$\rightarrow$ CIFRE 博士研究生（2023\textendash2026 年底）。}
 
 % -------------------- 核心成果（五个系统，各有侧重）--------------------
-\cvsection{核心成果（博士论文：可移植规划工作流，覆盖七个并行维度）}
+\cvsection{核心成果（大模型可移植规划调优系统，覆盖多种并行维度联合优化）}
 \itemListStart
   \myItem{\textbf{PRISM}（HPC Asia 2026，\emph{可预测性 / 显存}）：免性能采样地解析预测各阶段峰值显存与通信，使显存可行性成为可移植、跨集群复用的闭式判断。}
   \myItem{\textbf{BMPipe}（CLUSTER 2025，\emph{流水线效率}）：符号化气泡模型 + ILP 联合优化阶段边界 / 分块 / 重计算，压缩空泡；1.36$\times$，HBM 83\textendash92\%，验证至 16,384 张 Ascend NPU。}
@@ -76,7 +76,7 @@
 % -------------------- 教育背景 --------------------
 \cvsection{教育背景}
 \footnotesize
-\textbf{索邦大学 \& EURECOM} —— 计算机科学博士（混合并行系统化与可移植优化；EDITE ED 130；导师 Prof. Raja Appuswamy、Prof. Chong Li）\hfill {\color{TextMuted}2023 \textemdash{} 2026 年底}\\
+\textbf{索邦大学 \& EURECOM} —— 计算机科学博士（混合并行系统化与可移植优化；导师 Prof. Raja Appuswamy、Prof. Chong Li）\hfill {\color{TextMuted}2023 \textemdash{} 2026 年底}\\
 \textbf{索邦大学} —— 计算机科学硕士（算法、软件科学与技术）\hfill {\color{TextMuted}2019 \textemdash{} 2022}\\
 \textbf{巴黎-萨克雷大学} —— 计算机科学学士（早期研究受 Prof. Isabelle Guyon、Dr. Viviane Pons、Dr. Zhengying Liu 指导）\hfill {\color{TextMuted}2016 \textemdash{} 2019}
 
@@ -90,7 +90,7 @@
 \awardListStart
   \item \footnotesize 金奖，华为自动负载均衡挑战令 \hfill 2024.08
   \item \footnotesize 最佳海报奖，Euro-Par 国际会议 \hfill 2025.08
-  \item \footnotesize 感谢信，中国电信（DeepSeek-MoE 部署）\hfill 2025.12
+  \item \footnotesize 感谢信，中国电信（TeleChat3-MoE 部署）\hfill 2025.12
 \awardListEnd
 \end{minipage}
 \hfill
@@ -100,7 +100,7 @@
 \textbf{编程}：Python、C++、Java\\
 \textbf{框架 / 平台}：MindSpore、PyTorch；大规模 GPU/NPU 集群（至 16k）与云\\
 \textbf{工具 / 开发}：Ascend 性能剖析、tracing、性能基准；Linux、Git\\
-\textbf{语言}：中文（母语）、英语、法语、粤语
+\textbf{语言}：中文、英语、法语、粤语
 \end{minipage}
 
 \end{document}

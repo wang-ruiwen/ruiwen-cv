@@ -12,7 +12,7 @@
 \usepackage[unicode]{hyperref}
 \hypersetup{colorlinks=true, urlcolor=Accent, linkcolor=Accent}
 
-\linespread{1.12}
+\linespread{1.16}
 
 \begin{document}
 
@@ -42,7 +42,7 @@
 
 % -------------------- 博士研究 --------------------
 \cvsection{博士研究}
-\small 博士论文：《面向大规模分布式训练的混合并行系统化与可移植优化》（索邦大学，EDITE ED 130 博士学院）。以单一的逐层（Transformer）代价单元构建可移植的“行为级”规划工作流，覆盖全部七个并行维度（数据 / 张量 / 流水线 / 虚拟流水线 / 序列 / 专家 / 优化器），使大规模混合并行规划具备\textbf{可预测性}（PRISM）、\textbf{互操作性}（BMPipe + H2O）、\textbf{可演进性}（Concord）与\textbf{自适应性}（ManuMatic）。该单元将模型、硬件与并行描述解耦，使方案在执行前即可预测、并可跨 GPU/NPU 集群移植；已在 Mixtral-8$\times$7B、Llama3-8B、Qwen2.5-72B、DeepSeek-141B 等模型、从数十卡到 16,384 张 Ascend NPU 集群（含长序列场景）上验证。
+\small 博士论文：《面向大规模分布式训练的混合并行系统化与可移植优化》（索邦大学）。以单一的逐层（Transformer）代价单元构建可移植的“行为级”规划工作流，覆盖全部七个并行维度（数据 / 张量 / 流水线 / 虚拟流水线 / 序列 / 专家 / 优化器），使大规模混合并行规划具备\textbf{可预测性}（PRISM）、\textbf{互操作性}（BMPipe + H2O）、\textbf{可演进性}（Concord）与\textbf{自适应性}（ManuMatic）。该单元将模型、硬件与并行描述解耦，使方案在执行前即可预测、并可跨 GPU/NPU 集群移植；已在 Mixtral-8$\times$7B、Llama3-8B、Qwen2.5-72B、DeepSeek-141B 等模型、从数十卡到 16,384 张 Ascend NPU 集群（含长序列场景）上验证。
 
 % -------------------- 代表系统与成果 --------------------
 \cvsection{代表系统与成果}
@@ -60,11 +60,11 @@
   {华为巴黎研究所 \textemdash{} 分布式与并行计算实验室}{法国，巴黎}
   {博士研究生（CIFRE）兼研究工程师 \textemdash{} 大模型训练系统}{2021 \textemdash{} 2026 年底}
 \itemListStart
-  \myItem{构建基于代价模型的混合 / 流水线并行 LLM 训练规划器：在显存与性能约束下完成阶段划分、流水线调度与重计算选择。}
-  \myItem{设计符号化峰值显存估计与集合通信代价模型，结合通信-计算重叠策略，进行大规模吞吐与 MFU 调优。}
-  \myItem{将研究原型产品化为可部署的规划流程，与工程及客户团队协作：配置建议、可调试执行轨迹与跨模型 / 跨规模的回归基准。}
-  \myItem{推动研究成果向生产级训练环境转化，包括客户负载与长序列训练的部署反馈（中国电信就 DeepSeek-MoE 优化致感谢信）。}
-  \myItem{建模 MoE / 专家并行与长序列训练：专家归属约束、负载均衡，以及序列 / 虚拟流水线调度。}
+  \myItem{构建基于代价模型的混合 / 流水线并行 LLM 训练规划器：搜索阶段划分、流水线调度与重计算策略。}
+  \myItem{设计符号化峰值显存与集合通信代价模型，支撑执行前的可行性判断与性能预测。}
+  \myItem{开展显存与性能分析及 profiling：算子级性能剖析、显存 / 通信占用分析与瓶颈定位，指导吞吐与 MFU 调优。}
+  \myItem{沉淀可调试执行轨迹与跨模型 / 跨规模的回归基准，支撑可复现的评测与配置建议。}
+  \myItem{将研究原型产品化为可部署规划流程，与工程及客户团队协作，推动向生产级训练环境的技术转化。}
 \itemListEnd
 {\footnotesize\color{TextMuted}角色演进：研究学徒（2021\textendash2022）$\rightarrow$ 研究工程师（2022\textendash2023）$\rightarrow$ CIFRE 博士研究生（2023\textendash2026 年底）。}
 
@@ -72,7 +72,7 @@
 \cvsection{生产落地与协作}
 \itemListStart
   \myItem{将规划器生成的策略转化到生产训练：4{,}096 卡训练端到端约 1.1$\times$，512 卡长序列训练最高 2.37$\times$。}
-  \myItem{参与大规模 DeepSeek-MoE 训练优化的部署，在真实客户负载与超大规模集群上形成反馈闭环。}
+  \myItem{参与大规模 TeleChat3-MoE 训练优化的部署，在真实客户负载与超大规模集群上形成反馈闭环。}
   \myItem{跨研究、工程与客户平台团队协作；构建可复现的基准测试与可调试轨迹，使规划决策在生产中可信。}
 \itemListEnd
 
@@ -102,7 +102,7 @@
 \cvsection{教育背景}
 \cventry
   {索邦大学 \& EURECOM}{法国，巴黎}
-  {计算机科学博士 \textemdash{} EDITE ED 130 博士学院；导师：Prof. Raja Appuswamy、Prof. Chong Li}{2023 \textemdash{} 2026 年底}
+  {计算机科学博士；导师：Prof. Raja Appuswamy、Prof. Chong Li}{2023 \textemdash{} 2026 年底}
 \itemListStart
   \myItem{博士论文：面向大规模分布式训练的混合并行系统化与可移植优化。}
 \itemListEnd
@@ -125,7 +125,7 @@
 \awardListStart
   \item \small 金奖，华为自动负载均衡挑战令（Huawei Challenge Award）\hfill 2024.08
   \item \small 最佳海报奖，Euro-Par 国际会议 \hfill 2025.08
-  \item \small 感谢信，中国电信（DeepSeek-MoE 训练优化部署）\hfill 2025.12
+  \item \small 感谢信，中国电信（TeleChat3-MoE 部署）\hfill 2025.12
 \awardListEnd
 
 % -------------------- 技能 --------------------
