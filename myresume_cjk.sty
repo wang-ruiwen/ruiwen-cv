@@ -1,0 +1,78 @@
+%-------------------------------------
+% Bilingual (Chinese) resume style for XeLaTeX
+% Uses ctex for CJK. Latin text uses the bundled Sabon font (Fonts/),
+% matching the English templates. Designed to be robust and simple.
+%-------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{myresume_cjk}[2026/06/08 Chinese resume style]
+
+% ctex is loaded by the document (with the desired fontset) BEFORE this package.
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{multicol}
+
+% ---- Colours (shared with the modern English template) ----
+\definecolor{Accent}{HTML}{173754}
+\definecolor{AccentSoft}{HTML}{EAF1F6}
+\definecolor{TextPrimary}{HTML}{1B1F24}
+\definecolor{TextMuted}{HTML}{5E6772}
+\definecolor{RuleColor}{HTML}{D7E0E8}
+
+% ---- Latin font: reuse the bundled Sabon for a consistent look ----
+% (CJK fonts are handled by ctex via the chosen fontset.)
+\setmainfont{SabonLTStd}[
+    Path=./Fonts/Sabon/,
+    Extension=.ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic
+]
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\multicolsep}{0pt}
+\setlength{\columnsep}{0.55cm}
+
+% ---- Header macros ----
+\newcommand{\ResumeName}[1]{{\heiti\fontsize{24pt}{26pt}\selectfont\color{TextPrimary}#1}}
+\newcommand{\ResumeNameEn}[1]{{\fontsize{14pt}{16pt}\selectfont\color{TextMuted}\textsc{#1}}}
+\newcommand{\ResumeRole}[1]{{\heiti\fontsize{10.8pt}{12pt}\selectfont\color{Accent}#1}}
+\newcommand{\AccentRule}{\textcolor{RuleColor}{\rule{\textwidth}{0.8pt}}}
+
+% ---- Section heading: bold Hei title + thin rule beneath ----
+\newcommand{\cvsection}[1]{%
+  \par\vspace{7pt}%
+  {\heiti\fontsize{12.5pt}{14pt}\selectfont\color{Accent}#1}\par
+  \vspace{2pt}{\color{RuleColor}\hrule height 0.6pt}\vspace{5pt}%
+}
+
+% ---- Entry: title (left) + meta (right), then subtitle line ----
+% #1 organisation/title  #2 right meta (date/location)  #3 sub-line  #4 right meta 2
+\newcommand{\cventry}[4]{%
+  \par\noindent{\bfseries\color{TextPrimary}#1}\hfill{\small\color{TextMuted}#2}\\[1pt]
+  {\small\color{TextMuted}#3}\hfill{\small\color{TextMuted}#4}\par\vspace{2pt}%
+}
+
+% Two-argument entry (no second line)
+\newcommand{\cvline}[2]{%
+  \par\noindent{\bfseries\color{TextPrimary}#1}\hfill{\small\color{TextMuted}#2}\par\vspace{2pt}%
+}
+
+% ---- Lists ----
+\newcommand{\itemListStart}{\begin{itemize}[leftmargin=1.25em,label=\textbullet,topsep=2pt,itemsep=3pt,parsep=0pt,partopsep=0pt]}
+\newcommand{\itemListEnd}{\end{itemize}}
+\newcommand{\myItem}[1]{\item \small #1}
+
+\newcommand{\pubListStart}{\begin{enumerate}[leftmargin=1.6em,topsep=2pt,itemsep=2.5pt,parsep=0pt,partopsep=0pt]}
+\newcommand{\pubListEnd}{\end{enumerate}}
+
+\newcommand{\awardListStart}{\begin{itemize}[leftmargin=1.15em,label=\textbullet,topsep=1pt,itemsep=1.8pt,parsep=0pt,partopsep=0pt]}
+\newcommand{\awardListEnd}{\end{itemize}}
+
+\newcommand{\skillListStart}{\begin{itemize}[leftmargin=0pt,label={},topsep=0pt,itemsep=2pt,parsep=0pt,partopsep=0pt]}
+\newcommand{\skillListEnd}{\end{itemize}}

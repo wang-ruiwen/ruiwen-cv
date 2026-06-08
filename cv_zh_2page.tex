@@ -1,0 +1,143 @@
+%-------------------------------------
+% 中文简历 — 两页版 (XeLaTeX)
+% 编译: xelatex -interaction=nonstopmode -halt-on-error cv_zh_2page.tex
+% 字体: 默认使用 fandol 字体 (随 TeX 发行版自带, 跨平台均可编译)。
+%       若在 Windows 上偏好系统字体 (宋体 SimSun / 黑体 SimHei), 将 fontset=fandol 改为 fontset=windows。
+%-------------------------------------
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[UTF8, fontset=fandol, scheme=plain]{ctex}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage{myresume_cjk}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks=true, urlcolor=Accent, linkcolor=Accent}
+
+\linespread{1.02}
+
+\begin{document}
+
+% -------------------- 抬头 --------------------
+\begin{minipage}[t]{0.60\textwidth}
+  \ResumeName{王瑞文}\;\ResumeNameEn{Ruiwen Wang}\\[4pt]
+  \ResumeRole{AI 基础设施 \textperiodcentered{} 大模型预训练 \textperiodcentered{} 混合并行}\\[3pt]
+  {\small\color{TextMuted}索邦大学 \& EURECOM \;|\; 华为巴黎研究所联合培养 (CIFRE) \;|\; 预计 2026 年 8 月毕业}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\textwidth}
+  \raggedleft\small\color{TextMuted}
+  法国，巴黎\\
+  (+33) 663113466 \;|\; \href{mailto:wangrw0124@gmail.com}{wangrw0124@gmail.com}\\
+  国籍：法国 \;|\; 中文 / 英语 / 法语 / 粤语\\
+  \href{http://ruiwen.wang/}{ruiwen.wang} \;\textperiodcentered\; \href{https://scholar.google.com/citations?user=AR1nHEUAAAAJ}{Google Scholar}\\
+  \href{https://github.com/wang-ruiwen}{GitHub} \;\textperiodcentered\; \href{https://www.linkedin.com/in/ruiwen-wang-ai/}{LinkedIn} \;\textperiodcentered\; \href{https://orcid.org/0009-0000-6709-5970}{ORCID}
+\end{minipage}
+
+\vspace{8pt}
+\AccentRule
+
+% -------------------- 个人简介 --------------------
+\cvsection{个人简介}
+\small
+计算机科学博士研究生（CIFRE 产学联合培养），就读于索邦大学（Sorbonne University）与 EURECOM，并与华为巴黎研究所联合开展研究，预计 2026 年 8 月毕业。研究方向位于人工智能（AI）、高性能计算（HPC）与机器学习系统（MLSys）的交叉领域，聚焦于面向超大规模 LLM/DNN 训练的高效、可靠的优化式策略规划。构建符号化的性能与显存模型，并结合整数线性规划（ILP）与约束求解，自动生成显存可行、通信感知的混合并行策略与流水线调度方案。研究成果发表于 CLUSTER、Euro-Par（最佳海报奖）、NPC、HPC Asia 等会议，并在最多 16,384 张 Ascend NPU 的生产集群上完成验证，已转化为可落地的规划流程，连接系统底层研究与真实训练基础设施。
+
+% -------------------- 研究专长 --------------------
+\cvsection{研究专长}
+\itemListStart
+  \myItem{可扩展 LLM/DNN 训练系统：张量 / 数据 / 流水线 / 专家混合并行策略设计、阶段划分、微批次调度。}
+  \myItem{系统协同优化的原理性建模：符号化性能与峰值显存建模、可行性分析、大规模集群验证方法。}
+  \myItem{优化式规划算法：以约束规划与整数线性规划联合优化显存、通信与吞吐。}
+  \myItem{科研到生产的转化：可复现的基准测试与可部署流程，与工程及平台团队协作落地。}
+\itemListEnd
+
+% -------------------- 工作经历 --------------------
+\cvsection{工作经历}
+\cventry
+  {华为巴黎研究所 \textemdash{} 分布式与并行计算实验室}{法国，巴黎}
+  {博士研究生（CIFRE）兼研究工程师 \textemdash{} 大模型训练系统}{2021 \textemdash{} 2026（预计）}
+\itemListStart
+  \myItem{构建基于代价模型的混合 / 流水线并行 LLM 训练规划器：在显存与性能约束下完成阶段划分、流水线调度与重计算选择。}
+  \myItem{设计符号化峰值显存估计与集合通信代价模型，结合通信-计算重叠策略，进行大规模吞吐与 MFU 调优。}
+  \myItem{将研究原型产品化为可部署的规划流程，与工程及客户团队协作，提供可操作的配置建议、可调试的执行轨迹与跨模型 / 跨规模的回归基准。}
+  \myItem{推动研究成果向生产级训练环境的技术转化，包括在客户负载与长序列训练场景中的部署反馈闭环。}
+\itemListEnd
+{\footnotesize\color{TextMuted}角色演进：研究学徒（2021\textendash2022）$\rightarrow$ 研究工程师（2022\textendash2023）$\rightarrow$ CIFRE 博士研究生（2023\textendash2026）。}
+
+% -------------------- 代表性成果 --------------------
+\cvsection{代表性成果}
+\cvline{BMPipe：流水线气泡-显存协同优化规划器（CLUSTER 2025）}{2023 \textemdash{} 2024}
+\itemListStart
+  \myItem{以符号代价模型结合 ILP 搜索，联合优化阶段边界、阶段内分块与逐层重计算；最高 1.36$\times$ 加速，HBM 利用率 83\textendash92\%，在最多 16,384 张 Ascend NPU 集群上验证。}
+\itemListEnd
+\cvline{ManuMatic：面向稳健自动混合并行的策略注入（NPC 2025）}{2024}
+\itemListStart
+  \myItem{将用户提供的算子切分作为一等规划约束，实现稳健的“手动 + 自动”搜索；相较 D-Rec 在 Mixtral-8$\times$7B 上 2.24$\times$、Llama3-8B 上 2.04$\times$，在 Qwen2.5-72B 上较专家调优方案提升 30.1\%。}
+\itemListEnd
+\cvline{H2O：两级规划与部署工作流（Euro-Par 2025 最佳海报奖）}{2025}
+\itemListStart
+  \myItem{先搜索并行度与微批大小，再细化层-阶段映射与自适应重计算；将 MFU 从 26.13\% 提升至 35.73\%，在 DeepSeek-141B 上加速 36.72\%，并转化到生产部署（4{,}096 卡训练约 1.1$\times$，512 卡长序列训练最高 2.37$\times$）。}
+\itemListEnd
+\cvline{PRISM：免性能剖析的符号化策略规划器（HPC Asia 2026）}{2025}
+\itemListStart
+  \myItem{无需性能采样即可预测峰值显存与通信，并在统一目标下搜索混合并行策略；1.23$\times$\textendash1.43$\times$ 加速，MFU 从 29.40\% 提升至 36.20\%，在最多 1{,}024 卡上验证。}
+\itemListEnd
+
+% -------------------- 论文发表 --------------------
+\cvsection{论文发表}
+\small
+\pubListStart
+  \item \textbf{Ruiwen Wang}, Chong Li, Thibaut Tachon, Raja Appuswamy, Teng Su. \textit{BMPipe: Bubble-Memory Co-optimization Strategy Planner for Very-Large DNN Training.} IEEE CLUSTER 2025.
+  \item \textbf{Ruiwen Wang}, Chong Li, Raja Appuswamy, Yujie Yuan. \textit{H2O: Holistic Hyperparameter Optimization for Large-Scale Deep Neural Network Training.} Euro-Par 2025.\;\textbf{（最佳海报奖 / Best Poster Award）}
+  \item \textbf{Ruiwen Wang}, Chong Li, Hongxing Wang, Raja Appuswamy, Yujie Yuan. \textit{ManuMatic: Strategy Injection for Robust Automatic Hybrid Parallelism in Distributed DNN Training.} NPC 2025.
+  \item Xinzhang Liu, Chao Wang, Zhihua Yang, Zhuo Jiang, \textbf{Ruiwen Wang}, et al. \textit{Training Report of TeleChat3-MoE.} arXiv preprint, 2025.
+  \item \textbf{Ruiwen Wang}, Philippe Fang, Chong Li, Thibaut Tachon, Raja Appuswamy. \textit{PRISM: Profiling-Free Symbolic Memory-Driven Strategy Planner for Large DNN Model Training.} HPC Asia 2026.
+  \item Zhengdao Yu, \textbf{Ruiwen Wang}, Nelson Lossing, Chong Li. \textit{MLLM Pipeline Bubble Modeling for Large-Scale Training.} HPC Asia 2026.
+\pubListEnd
+
+% -------------------- 专利 --------------------
+\cvsection{专利}
+\small
+\pubListStart
+  \item Chong Li, Pierre Leca, Thibaut Tachon, \textbf{Ruiwen Wang}, Haoran Wang. \textit{Devices and methods for generating execution plans for a machine learning model.}（WO 2025/020165 A1）
+  \item Chong Li, \textbf{Ruiwen Wang}, Haoran Wang, Fan Yu. \textit{A load balancing method to improve large model performance.}
+  \item Chong Li, Thibaut Tachon, \textbf{Ruiwen Wang}, Haoran Wang. \textit{A multi-dimension parallelism configuration method for large language model training.}
+\pubListEnd
+
+% -------------------- 教育背景 --------------------
+\cvsection{教育背景}
+\cventry
+  {索邦大学 \& EURECOM}{法国，巴黎}
+  {计算机科学博士；导师：Prof. Raja Appuswamy、Prof. Chong Li}{2023 \textemdash{} 2026（预计）}
+\itemListStart
+  \myItem{研究课题：使用并行计算技术实现分布式学习的系统化与可移植加速。}
+\itemListEnd
+\cventry
+  {索邦大学}{法国，巴黎}
+  {计算机科学硕士；导师：Prof. Emmanuel Chailloux、Prof. Jacques Malenfant}{2019 \textemdash{} 2022}
+\itemListStart
+  \myItem{方向：算法、软件科学与技术。}
+\itemListEnd
+\cvline{巴黎-萨克雷大学 \textemdash{} 计算机科学学士（法国，巴黎）}{2016 \textemdash{} 2019}
+
+% -------------------- 荣誉奖项 --------------------
+\cvsection{荣誉奖项}
+\awardListStart
+  \item \small 金奖，华为自动负载均衡挑战赛（Huawei Challenge Award）\hfill 2024.08
+  \item \small 最佳海报奖，Euro-Par 国际会议 \hfill 2025.08
+  \item \small 感谢信，中国电信（DeepSeek-MoE 训练优化部署）\hfill 2025.12
+\awardListEnd
+
+% -------------------- 技能 --------------------
+\cvsection{技能}
+\begin{multicols}{2}
+\raggedright
+\skillListStart
+  \item \textbf{编程语言}：Python、C++、Java
+  \item \textbf{机器学习框架}：MindSpore、PyTorch
+  \item \textbf{平台}：大规模 GPU/NPU 集群与云
+  \item \textbf{工具}：Ascend 性能剖析、tracing、性能回归基准测试
+  \item \textbf{开发}：Linux、Git
+  \item \textbf{语言}：中文（母语）、英语（流利）、法语（流利）、粤语
+\skillListEnd
+\end{multicols}
+
+\end{document}
