@@ -1,0 +1,210 @@
+\documentclass[a4paper,9.3pt]{article}
+
+\usepackage{myresume_modern}
+\usepackage[unicode]{hyperref}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=Accent,
+  linkcolor=Accent
+}
+
+\begin{document}
+
+\begin{minipage}[t]{0.62\textwidth}
+  \ResumeName{Ruiwen Wang}\\[3pt]
+  \ResumeRole{Ph.D. Candidate | AI Systems | HPC | ML Systems}\\[5pt]
+  {\small\color{TextMuted}Sorbonne University \& EURECOM \;|\; CIFRE with Huawei Paris Research Center \;|\; Expected graduation: Aug 2026}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.34\textwidth}
+  \raggedleft
+  {\small\color{TextMuted}
+  Paris, France\\
+  (+33) 663113466\\
+  \href{mailto:wangrw0124@gmail.com}{wangrw0124@gmail.com}\\
+  French nationality\\
+  Chinese, English, French, Cantonese}
+\end{minipage}
+
+\vspace{8pt}
+\AccentRule
+\vspace{10pt}
+
+\sectionBlock{Profile}{
+\small
+Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University and EURECOM, in collaboration with Huawei Paris Research Center, working on efficient and reliable ultra-scale LLM and DNN training. I build symbolic performance and memory models, then couple them with ILP and constraint-based search to synthesize memory-feasible, communication-aware hybrid-parallel strategies and pipeline schedules. My work sits at the intersection of AI, HPC, and ML systems, has been validated on production Ascend clusters up to 16,384 NPUs, and has produced publications at CLUSTER, Euro-Par, NPC, DP2E-AI, and HPC Asia together with multiple patents and deployment-oriented planning workflows.
+}
+
+\sectionBlock{Impact Snapshot}{
+\begin{minipage}[t]{0.24\linewidth}
+{\centering
+\textbf{\color{Accent}\fontsize{15pt}{16pt}\selectfont 16,384}\\[-1pt]
+{\footnotesize\color{TextMuted}Ascend NPUs validated}\par}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.24\linewidth}
+{\centering
+\textbf{\color{Accent}\fontsize{15pt}{16pt}\selectfont 7+}\\[-1pt]
+{\footnotesize\color{TextMuted}peer-reviewed papers}\par}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.24\linewidth}
+{\centering
+\textbf{\color{Accent}\fontsize{15pt}{16pt}\selectfont 3}\\[-1pt]
+{\footnotesize\color{TextMuted}patent families}\par}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.24\linewidth}
+{\centering
+\textbf{\color{Accent}\fontsize{15pt}{16pt}\selectfont 36.72\%}\\[-1pt]
+{\footnotesize\color{TextMuted}best reported speedup}\par}
+\end{minipage}
+}
+
+\sectionBlock{Research Focus}{
+\itemListStart
+  \myItem{Scalable LLM and DNN training systems: hybrid parallelism design across tensor, data, pipeline, and expert dimensions; stage partitioning; micro-batch scheduling.}
+  \myItem{Principled system modeling: symbolic performance and peak-memory models, feasibility analysis, and large-cluster validation methodology.}
+  \myItem{Optimization-based planning: ILP and constraint-programming formulations that jointly optimize memory, communication, and throughput.}
+  \myItem{Research-to-production transfer: deployable planning workflows, reproducible benchmarking, actionable traces, and collaboration with platform and customer teams.}
+\itemListEnd
+}
+
+\sectionBlock{Experience}{
+\cvEntry
+  {Distributed and Parallel Computing Lab, Huawei Paris Research Center}
+  {Paris, France}
+  {Ph.D. Candidate (CIFRE) and Research Engineer -- LLM Training Systems}
+  {2021 -- 2026 (expected)}
+\itemListStart
+  \myItem{Built cost-model-driven planners for hybrid and pipeline-parallel LLM training, covering stage partitioning, pipeline scheduling, and recomputation choices under memory and performance constraints.}
+  \myItem{Designed symbolic peak-memory estimators and collective-cost models, then integrated overlap-aware strategies for large-scale throughput and MFU tuning.}
+  \myItem{Translated prototypes into deployable planning workflows with engineering and customer teams, delivering configuration guidance, debuggable traces, and regression benchmarks across model families and scales.}
+  \myItem{Supported technology transfer from research prototypes to production-scale training environments, including deployment feedback loops on customer workloads and long-sequence training scenarios.}
+\itemListEnd
+{\footnotesize\color{TextMuted}\textit{Role progression: Research Apprentice (2021--2022) -> Research Engineer (2022--2023) -> CIFRE Ph.D. Candidate (2023--2026).}}
+}
+
+\sectionBlock{Selected Impact}{
+\projectEntry
+  {BMPipe: Bubble-Memory Co-optimization Planner}
+  {CLUSTER 2025}
+  {2023 -- 2024}
+\itemListStart
+  \myItem{Developed a symbolic cost model plus ILP search that jointly optimizes stage boundaries, intra-stage chunking, and per-layer recomputation; achieved up to 1.36$\times$ speedup with HBM utilization reaching 83--92\%, validated on clusters up to 16,384 Ascend NPUs.}
+  \myItem{Showed that bubble reduction and memory feasibility can be solved jointly rather than sequentially, making the planner useful for very-large models where naive schedules are infeasible.}
+\itemListEnd
+
+\projectEntry
+  {ManuMatic: Strategy Injection for Robust Automatic Hybrid Parallelism}
+  {NPC 2025}
+  {2024}
+\itemListStart
+  \myItem{Framed user-provided operator shardings as first-class planning constraints, enabling robust ``manual + automatic'' search; delivered 2.24$\times$ on Mixtral-8$\times$7B and 2.04$\times$ on Llama3-8B versus D-Rec, with +30.1\% over an expert-tuned plan on Qwen2.5-72B.}
+  \myItem{Bridged the gap between automatic search and expert intervention, which made the approach practical for unstable or hard-to-search operator-level configurations.}
+\itemListEnd
+
+\projectEntry
+  {H2O: Two-Level Planning and Deployment Workflow}
+  {Euro-Par 2025 Best Poster Award}
+  {2025}
+\itemListStart
+  \myItem{Built a two-level workflow that first searches parallelism degrees and micro-batch size, then refines layer-to-stage mapping and adaptive recomputation under memory limits; improved MFU from 26.13\% to 35.73\% and delivered +36.72\% speedup on DeepSeek-141B, then transferred to production deployments.}
+  \myItem{In downstream deployment, the workflow produced around 1.1$\times$ improvement on 4,096-device training and up to 2.37$\times$ on long-sequence training at 512 devices.}
+\itemListEnd
+
+\projectEntry
+  {PRISM: Profiling-Free Symbolic Strategy Planner}
+  {HPC Asia 2026}
+  {2025}
+\itemListStart
+  \myItem{Designed an analytic planner that predicts peak memory and communication without profiling and searches hybrid-parallel strategies under unified objectives; achieved 1.23$\times$--1.43$\times$ speedups and raised MFU from 29.40\% to 36.20\%, validated up to 1,024 devices.}
+  \myItem{Reduced dependence on expensive profiling pipelines, improving portability across model families and cluster setups when rapid planning is needed.}
+\itemListEnd
+}
+
+\sectionBlock{Deployment \& Collaboration}{
+\itemListStart
+  \myItem{Collaborated with research mentors, engineering teams, and customer-facing platform groups to convert planning algorithms into actionable training configurations.}
+  \myItem{Built validation workflows that combine symbolic modeling, debuggable traces, and regression benchmarking to support reproducibility and operational trust.}
+  \myItem{Contributed to optimization and deployment work touching industrial-scale model training, including DeepSeek-MoE related deployment feedback recognized by China Telecom.}
+\itemListEnd
+}
+
+\sectionBlock{Selected Publications}{
+\small
+\pubListStart
+  \item \textbf{Ruiwen Wang}, Chong Li, Thibaut Tachon, Raja Appuswamy, Teng Su. \textit{BMPipe: Bubble-Memory Co-optimization Strategy Planner for Very-Large DNN Training}. IEEE CLUSTER 2025.
+  \item \textbf{Ruiwen Wang}, Chong Li, Raja Appuswamy, Yujie Yuan. \textit{H2O: Holistic Hyperparameter Optimization for Large-Scale Deep Neural Network Training}. Euro-Par 2025. \textbf{Best Poster Award}.
+  \item \textbf{Ruiwen Wang}, Chong Li, Hongxing Wang, Raja Appuswamy, Yujie Yuan. \textit{ManuMatic: Strategy Injection for Robust Automatic Hybrid Parallelism in Distributed DNN Training}. NPC 2025.
+  \item \textbf{Ruiwen Wang}, Chong Li, Thibaut Tachon, Raja Appuswamy. \textit{SCOPE: Symbolic Computation-Memory Optimization for Pipeline Efficiency in Ultra-Scale DNN Training}. DP2E-AI 2025.
+  \item Xinzhang Liu, Chao Wang, Zhihua Yang, Zhuo Jiang, \textbf{Ruiwen Wang}, et al. \textit{Training Report of TeleChat3-MoE}. arXiv preprint, 2025.
+  \item \textbf{Ruiwen Wang}, Philippe Fang, Chong Li, Thibaut Tachon, Raja Appuswamy. \textit{PRISM: Profiling-Free Symbolic Memory-Driven Strategy Planner for Large DNN Model Training}. HPC Asia 2026.
+  \item Zhengdao Yu, \textbf{Ruiwen Wang}, Nelson Lossing, Chong Li. \textit{MLLM Pipeline Bubble Modeling for Large-Scale Training}. HPC Asia 2026.
+\pubListEnd
+}
+
+\sectionBlock{Patents}{
+\small
+\pubListStart
+  \item Chong Li, Pierre Leca, Thibaut Tachon, \textbf{Ruiwen Wang}, Haoran Wang. \textit{Devices and methods for generating execution plans for a machine learning model.}
+  \item Chong Li, \textbf{Ruiwen Wang}, Haoran Wang, Fan Yu. \textit{A load balancing method to improve large model performance.}
+  \item Chong Li, Thibaut Tachon, \textbf{Ruiwen Wang}, Haoran Wang. \textit{A multi-dimension parallelism configuration method for large language model training.}
+\pubListEnd
+}
+
+\sectionBlock{Education}{
+\cvEntry
+  {Sorbonne University \& EURECOM}
+  {Paris, France}
+  {Ph.D. in Computer Science}
+  {2023 -- 2026 (expected)}
+\itemListStart
+  \myItem{Supervisors: Prof. Raja Appuswamy and Prof. Chong Li}
+  \myItem{Research topic: Systematic and Portable Acceleration of Distributed Learning using Parallel Computing Techniques}
+\itemListEnd
+
+\cvEntry
+  {Sorbonne University}
+  {Paris, France}
+  {M.Sc. in Computer Science}
+  {2019 -- 2022}
+\itemListStart
+  \myItem{Supervisors: Prof. Emmanuel Chailloux and Prof. Jacques Malenfant}
+  \myItem{Focus: Algorithms, Software Science, and Technology}
+\itemListEnd
+
+\cvEntry
+  {Paris-Saclay University}
+  {Paris, France}
+  {B.Sc. in Computer Science}
+  {2016 -- 2019}
+}
+
+\sectionBlock{Recognition}{
+\begin{minipage}[t]{0.47\linewidth}
+{\textbf{\color{TextPrimary}Awards}}\\[-2pt]
+\awardListStart
+  \item \small \emph{Golden Prize}, Huawei Challenge Award for Automatic Load Balancing \hfill 2024.08
+  \item \small \emph{Best Poster Award}, Euro-Par \hfill 2025.08
+  \item \small \emph{Letter of Appreciation}, China Telecom for DeepSeek-MoE training optimization deployment \hfill 2025.12
+\awardListEnd
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+{\textbf{\color{TextPrimary}Skills}}\\[-2pt]
+\begin{multicols}{2}
+\small
+\skillListStart
+  \item \textbf{Programming}: Python, C++, Java
+  \item \textbf{ML stacks}: MindSpore, PyTorch
+  \item \textbf{Platforms}: large-scale GPU/NPU clusters, cloud
+  \item \textbf{Tooling}: Ascend profiling, tracing, performance benchmarking
+  \item \textbf{Dev}: Linux, Git
+  \item \textbf{Languages}: Chinese, English, French, Cantonese
+\skillListEnd
+\end{multicols}
+\end{minipage}
+}
+
+\end{document}

@@ -1,0 +1,178 @@
+%-------------------------------------
+% Resume in LaTeX (XeLaTeX) - refined original-content version
+%-------------------------------------
+
+\documentclass[a4paper,9pt]{article}
+
+\usepackage{myresume_refined}
+\usepackage[unicode]{hyperref}
+
+\pagestyle{empty}
+\linespread{0.98}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\multicolsep}{0pt}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\sloppy
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=Accent,
+  linkcolor=Accent
+}
+
+\titlespacing*{\section}{0pt}{0pt}{2pt}
+
+\begin{document}
+
+% -------------------- HEADING --------------------
+\begin{minipage}[t]{0.62\textwidth}
+  {\Calluna \fontsize{29pt}{29pt}\selectfont \textsc{Ruiwen Wang}} \quad
+  {\Calluna \fontsize{14pt}{14pt}\selectfont \textsc{Ph.D. candidate}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.34\textwidth}
+  \raggedleft
+  {\Calluna (+33) 663113466}\\
+  {\Calluna \href{mailto:wangrw0124@gmail.com}{wangrw0124@gmail.com}}\\
+  {\Calluna Nationality: French}
+\end{minipage}
+
+\vspace{4pt}
+\noindent\textcolor{RuleColor}{\rule{\textwidth}{0.45pt}}
+\vspace{6pt}
+
+% -------------------- SUMMARY --------------------
+\sectionBlock{
+\section{Summary}}
+{
+Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University \& EURECOM, expected to graduate in Aug 2026, in collaboration with Huawei Paris Research Center. My research lies at the intersection of AI, HPC, and ML systems, with a focus on principled optimization-based planning for efficient and reliable ultra-scale LLM/DNN training. I develop symbolic performance and memory models together with ILP and constraint-based search to synthesize memory-feasible, communication-aware hybrid-parallel strategies and pipeline schedules. My work has been validated on production Ascend clusters up to 16,384 NPUs and informs deployable planning workflows, with publications at CLUSTER, Euro-Par (Best Poster Award), NPC, and HPC Asia.
+}
+
+% -------------------- RESEARCH EXPERTISE --------------------
+\sectionBlock{
+\section[Research Expertise]{Research\\Expertise}}
+{
+\itemListStart
+  \myItem{Research on scalable LLM/DNN training systems: hybrid-parallel strategy design across tensor, data, pipeline, and expert dimensions, stage partitioning, and micro-batch scheduling.}
+  \myItem{Principled modeling for system co-optimization: symbolic performance and peak-memory modeling, feasibility analysis, and validation methodology for large-scale clusters.}
+  \myItem{Optimization-based planning algorithms: ILP and constraint programming for joint optimization of memory, communication, and throughput.}
+  \myItem{Translation of systems research to practice: reproducible benchmarking and deployable workflows in collaboration with engineering and platform teams.}
+\itemListEnd
+}
+
+% -------------------- PROFESSIONAL EXPERIENCE --------------------
+\sectionBlock{
+\section[Professional Experience]{Professional\\Experience}}
+{
+\eduHeading
+  {Distributed and Parallel Computing Lab, Huawei Paris Research Center}{Paris, France}
+  {Ph.D. Candidate (CIFRE) \& Research Engineer -- LLM Training Systems}{2021 -- 2026 \footnotesize{\textit{(expected)}}}
+\itemListStart
+  \myItem{Built cost-model-driven planners for hybrid/pipeline-parallel LLM training: stage partitioning, pipeline scheduling, and recomputation selection under feasibility (memory/performance) constraints.}
+  \myItem{Designed symbolic peak-memory estimation and integrated collective-cost modeling with overlap strategies for large-scale throughput and MFU tuning.}
+  \myItem{Translated prototypes into deployable planning workflows with engineering and customer teams: actionable configuration guidance, debuggable traces, and regression benchmarking across model families and scales.}
+\itemListEnd
+{\footnotesize\textit{Role progression: Research Apprentice (2021--2022) $\rightarrow$ Research Engineer (2022--2023)\\ $\rightarrow$ CIFRE Ph.D. Candidate (2023--2026).}}
+}
+
+% -------------------- PUBLICATIONS --------------------
+\sectionBlock{
+\section{Publications}
+}{
+\footnotesize
+\pubListStart
+\justifying
+
+\item \textbf{Ruiwen Wang}, Chong Li, Thibaut Tachon, Raja Appuswamy, Teng Su. \textit{BMPipe: Bubble-Memory Co-optimization Strategy Planner for Very-Large DNN Training.} 27th IEEE International Conference on Cluster Computing (CLUSTER 2025).
+
+\item \textbf{Ruiwen Wang}, Chong Li, Raja Appuswamy, Yujie Yuan. \textit{H2O: Holistic Hyperparameter Optimization for Large-Scale Deep Neural Network Training.} \textbf{Best Poster Award}. 31st International European Conference on Parallel and Distributed Computing (Euro-Par 2025).
+
+\item \textbf{Ruiwen Wang}, Chong Li, Hongxing Wang, Raja Appuswamy, Yujie Yuan. \textit{ManuMatic: Strategy Injection for Robust Automatic Hybrid Parallelism in Distributed DNN Training.} 22nd IFIP International Conference on Network and Parallel Computing (NPC 2025).
+
+\item \textbf{Ruiwen Wang}, Chong Li, Thibaut Tachon, Raja Appuswamy. \textit{SCOPE: Symbolic Computation-Memory Optimization for Pipeline Efficiency in Ultra-Scale DNN Training.} 1st International Workshop on Distributed and Parallel Programming for Extreme-scale AI (DP2E-AI 2025).
+
+\item Xinzhang Liu, Chao Wang, Zhihua Yang, Zhuo Jiang, \ldots, \textbf{Ruiwen Wang}, et al. \textit{Training Report of TeleChat3-MoE.} arXiv preprint, 2025.
+
+\item \textbf{Ruiwen Wang}, Philippe Fang, Chong Li, Thibaut Tachon, Raja Appuswamy. \textit{PRISM: Profiling-Free Symbolic Memory-Driven Strategy Planner for Large DNN Model Training.} 19th Supercomputing Asia / International Conference on High Performance Computing in the Asia-Pacific Region (SCA/HPC Asia 2026).
+
+\item Zhengdao Yu, \textbf{Ruiwen Wang}, Nelson Lossing, Chong Li. \textit{MLLM Pipeline Bubble Modeling for Large-Scale Training.} 19th Supercomputing Asia / International Conference on High Performance Computing in the Asia-Pacific Region (SCA/HPC Asia 2026).
+
+\pubListEnd
+}
+
+% -------------------- PATENTS --------------------
+\sectionBlock{
+\section{Patents}
+}{
+\footnotesize
+\pubListStart
+\justifying
+
+\item Chong Li, Pierre Leca, Thibaut Tachon, \textbf{Ruiwen Wang}, Haoran Wang. \textit{Devices and methods for generating execution plans for a machine learning model.}
+
+\item Chong Li, \textbf{Ruiwen Wang}, Haoran Wang, Fan Yu. \textit{A load balancing method to improve large model performance.}
+
+\item Chong Li, Thibaut Tachon, \textbf{Ruiwen Wang}, Haoran Wang. \textit{A multi-dimension parallelism configuration method for large language model training.}
+
+\pubListEnd
+}
+
+% -------------------- EDUCATION --------------------
+\sectionBlock{
+\section{Education}
+}{
+\eduHeading
+  {Sorbonne University \& EURECOM}{Paris, France}
+  {Ph.D. in Computer Science}{2023 -- 2026 \footnotesize{\textit{(expected)}}}
+\itemListStart
+  \myItem{Supervisor: Prof. Raja Appuswamy, Prof. Chong Li}
+  \myItem{Research topic: Systematic and Portable Acceleration of Distributed Learning using Parallel Computing Techniques}
+\itemListEnd
+
+\eduHeading
+  {Sorbonne University}{Paris, France}
+  {M.Sc. in Computer Science}{2019 -- 2022}
+\itemListStart
+  \myItem{Supervisor: Prof. Emmanuel Chailloux \& Prof. Jacques Malenfant}
+  \myItem{Research focus: Algorithms, Software Science, and Technology}
+\itemListEnd
+
+\eduHeading
+  {Paris-Saclay University}{Paris, France}
+  {B.Sc. in Computer Science}{2016 -- 2019}
+}
+
+% -------------------- AWARDS & SKILLS --------------------
+\sectionBlock{
+\section[Awards and Honors]{Awards\\and\\Honors}}
+{
+\footnotesize
+\awardListStart
+\item \emph{Golden Prize}, Huawei Challenge Award for Automatic Load Balancing \hfill 2024.08
+\item \emph{Best Poster Award}, Euro-Par conference \hfill 2025.08
+\item \emph{Letter of Appreciation}, China Telecom (DeepSeek-MoE training optimization deployment) \hfill 2025.12
+\awardListEnd
+}
+
+\sectionBlock{
+\section{Skills}}
+{
+\begin{multicols}{2}
+\raggedright
+\footnotesize
+
+\skillListStart
+  \item \emph{Languages}: Chinese (native), English (fluent), French (fluent), Cantonese
+  \item \emph{Programming}: Python, C++, Java
+  \item \emph{ML Frameworks}: MindSpore, PyTorch
+  \item \emph{Platforms}: large-scale GPU/NPU clusters and cloud
+  \item \emph{Tooling}: Ascend profiling, tracing, performance regression benchmarking
+  \item \emph{Development}: Linux, Git
+\skillListEnd
+
+\end{multicols}
+}
+
+\end{document}

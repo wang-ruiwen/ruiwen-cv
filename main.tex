@@ -1,0 +1,269 @@
+%-------------------------------------
+% Resume in LaTeX (XeLaTeX) — compact 2-page version (bullets loosened)
+%-------------------------------------
+
+\documentclass[a4paper,9pt]{article}
+
+\usepackage{myresume}  % Style package
+
+% ---------- Compact layout tuning ----------
+\usepackage[a4paper,left=1.35cm,right=1.35cm,top=1.15cm,bottom=1.15cm]{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{microtype}
+
+\pagestyle{empty}
+
+% Slightly more readable than the previous 0.96
+\linespread{0.98}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\sloppy
+\usepackage[unicode]{hyperref}
+
+% Tighten section spacing (keep, to stay within 2 pages)
+% \titlespacing*{\section}{0pt}{3.5pt}{2.5pt}
+
+% -------------------- LIST SPACING (key change: loosen bullets) --------------------
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+% Global defaults (moderate)
+% \setlist[itemize]{leftmargin=1.35em,labelsep=0.45em,topsep=1.8pt,itemsep=1.6pt,parsep=0pt,partopsep=0pt}
+% \setlist[enumerate]{leftmargin=1.35em,labelsep=0.45em,topsep=1.8pt,itemsep=1.6pt,parsep=0pt,partopsep=0pt}
+
+% Override the custom list macros used by this template (safe even if undefined)
+\makeatletter
+\@ifundefined{itemListStart}{\newcommand{\itemListStart}{\begin{itemize}}}{}%
+\@ifundefined{itemListEnd}{\newcommand{\itemListEnd}{\end{itemize}}}{}%
+\@ifundefined{pubListStart}{\newcommand{\pubListStart}{\begin{itemize}}}{}%
+\@ifundefined{pubListEnd}{\newcommand{\pubListEnd}{\end{itemize}}}{}%
+\@ifundefined{awardListStart}{\newcommand{\awardListStart}{\begin{itemize}}}{}%
+\@ifundefined{awardListEnd}{\newcommand{\awardListEnd}{\end{itemize}}}{}%
+\@ifundefined{skillListStart}{\newcommand{\skillListStart}{\begin{itemize}}}{}%
+\@ifundefined{skillListEnd}{\newcommand{\skillListEnd}{\end{itemize}}}{}%
+
+% Main bullets (Experience / Projects / Competencies): more breathing room
+% \renewcommand{\itemListStart}{\begin{itemize}[topsep=2.0pt,itemsep=6pt,parsep=pt,partopsep=0pt]}
+\renewcommand{\itemListEnd}{\end{itemize}\vspace{-3pt}}
+
+% Publications/Patents: keep compact
+\renewcommand{\pubListStart}{\begin{itemize}[topsep=1.5pt,itemsep=1.1pt,parsep=0pt,partopsep=0pt,leftmargin=1.2em]}
+\renewcommand{\pubListEnd}{\end{itemize}\vspace{-3pt}}
+
+% Awards/Skills: slightly compact
+\renewcommand{\awardListStart}{\begin{itemize}[topsep=1.2pt,itemsep=1.0pt,parsep=0pt,partopsep=0pt,leftmargin=1.05em,labelsep=0.40em]}
+\renewcommand{\awardListEnd}{\end{itemize}\vspace{-3pt}}
+
+\renewcommand{\skillListStart}{\begin{itemize}[topsep=1.0pt,itemsep=0.9pt,parsep=0pt,partopsep=0pt,leftmargin=1.05em,labelsep=0.40em]}
+\renewcommand{\skillListEnd}{\end{itemize}\vspace{-3pt}}
+\makeatother
+
+% --------------------  START  --------------------
+\begin{document}
+
+% -------------------- HEADING --------------------
+\begin{flushright}
+  \setstretch{0.7}
+  {\Calluna (+33) 663113466}\\
+  {\Calluna wangrw0124@gmail.com}\\
+  {\Calluna Nationality: French}
+\end{flushright}\vspace{-38pt}
+
+\begin{flushleft}
+  {\Calluna \fontsize{30pt}{30pt}\selectfont \textsc{Ruiwen WANG}}
+  \quad
+  {\Calluna \fontsize{14.5pt}{14.5pt}\selectfont \textsc{Ph.D. candidate}}
+  \noindent\rule{\textwidth}{0.4pt}
+\end{flushleft}
+
+% -------------------- SUMMARY --------------------
+\sectionBlock{
+\section{Summary}}
+{
+Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University \& EURECOM (expected graduation in Aug 2026), collaborating with Huawei Paris Research Center. My research lies at the intersection of AI (Artificial Intelligence), HPC (High Performance Computing) and MLSys (Machine Learning System), with a focus on principled, optimization-based planning for efficient and reliable ultra-scale LLM/DNN training. I develop symbolic performance/memory models and ILP/constraint-based search to synthesize memory-feasible, communication-aware hybrid-parallel strategies and pipeline schedules, with publications at CLUSTER, Euro-Par (Best Poster Award), NPC, and HPC Asia. My work is validated on production Ascend clusters up to 16,384 NPUs and informs deployable planning workflows, bridging foundational systems research and real-world training infrastructure.
+\vspace{-15pt}
+}
+
+
+% -------------------- CORE COMPETENCIES --------------------
+\sectionBlock{
+\section{Research Expertise}}
+{
+\item Research on scalable LLM/DNN training systems: hybrid-parallel strategy design (tensor/data/pipeline/expert), stage partitioning, micro-batch scheduling.
+\item Principled modeling for system co-optimization: symbolic performance and peak-memory modeling, feasibility analysis, and validation methodology for large-scale clusters.
+\item Optimization-based planning algorithms: constraint programming for joint optimization of memory/communication/throughput.
+\item Translation of systems research to practice: reproducible benchmarking and deployable workflows in collaboration with engineering and platform teams.
+\vspace{-15pt}
+}
+
+
+% -------------------- PUBLICATIONS --------------------
+\sectionBlock{
+\section{Publications}
+}{
+\small
+\pubListStart
+\justifying
+
+\item \textbf{Ruiwen Wang}, Chong Li, Thibaut Tachon, Raja Appuswamy, Teng Su. \\
+\textit{BMPipe: Bubble--Memory Co-optimization Strategy Planner for Very-Large DNN Training.} \\
+27th IEEE International Conference on Cluster Computing (CLUSTER 2025).
+
+\item \textbf{Ruiwen Wang}, Chong Li, Raja Appuswamy, Yujie Yuan. \\
+\textit{H2O: Holistic Hyperparameter Optimization for Large-Scale Deep Neural Network Training.} --- \textbf{Best Poster Award}. \\
+31st International European Conference on Parallel and Distributed Computing (Euro-Par 2025).
+
+\item \textbf{Ruiwen Wang}, Chong Li, Hongxing Wang, Raja Appuswamy, Yujie Yuan. \\
+\textit{ManuMatic: Strategy Injection for Robust Automatic Hybrid Parallelism in Distributed DNN Training.} \\
+22nd IFIP International Conference on Network and Parallel Computing (NPC 2025).
+
+\item \textbf{Ruiwen Wang}, Chong Li, Thibaut Tachon, Raja Appuswamy. \\
+\textit{SCOPE: Symbolic Computation--Memory Optimization for Pipeline Efficiency in Ultra-Scale DNN Training.} \\
+1st International Workshop on Distributed and Parallel Programming for Extreme-scale AI (DP2E-AI 2025).
+
+\item Xinzhang Liu, Chao Wang, Zhihua Yang, Zhuo Jiang, …, \textbf{Ruiwen Wang}, et al.. \\
+\textit{Training Report of TeleChat3-MoE.} \\
+arXiv preprint, 2025.
+
+\item \textbf{Ruiwen Wang}, Philippe Fang, Chong Li, Thibaut Tachon, Raja Appuswamy. \\
+\textit{PRISM: Profiling-Free Symbolic Memory-Driven Strategy Planner for Large DNN Model Training.} \\
+19th Supercomputing Asia / International Conference on High Performance Computing in the Asia-Pacific Region (SCA/HPC Asia 2026).
+
+\item Zhengdao Yu, \textbf{Ruiwen Wang}, Nelson Lossing, Chong Li. \\
+\textit{MLLM Pipeline Bubble Modeling for Large-Scale Training.} \\
+19th Supercomputing Asia / International Conference on High Performance Computing in the Asia-Pacific Region (SCA/HPC Asia 2026).
+
+
+\pubListEnd
+\vspace{-15pt}
+}
+
+% -------------------- PATENTS --------------------
+\sectionBlock{
+\section{Patents}
+}{
+\small
+\pubListStart
+\justifying
+
+\item Chong Li, Pierre Leca, Thibaut Tachon, \textbf{Ruiwen Wang}, Haoran Wang. \\
+\textit{Devices and methods for generating execution plans for a machine learning model.}
+
+\item Chong Li, \textbf{Ruiwen Wang}, Haoran Wang, Fan Yu. \\
+\textit{A load balancing method to improve large model performance.}
+
+\item Chong Li, Thibaut Tachon, \textbf{Ruiwen Wang}, Haoran Wang. \\
+\textit{A multi-dimension parallelism configuration method for large language model training.}
+
+\pubListEnd
+\vspace{-15pt}
+}
+
+% -------------------- EDUCATION --------------------
+\sectionBlock{
+\section{Education}
+}{
+\eduHeading
+  {Sorbonne University \& EURECOM}{Paris, France}
+  {Ph.D. in Computer Science}{2023 - 2026 \footnotesize{\textit{(expected)}}}
+\itemListStart
+  \myItem{Supervisor: Prof. Raja Appuswamy, Prof. Chong Li}
+  \myItem{Research Topic: Systematic and Portable Acceleration of Distributed Learning using Parallel Computing Techniques}
+\itemListEnd
+
+\eduHeading
+  {Sorbonne University}{Paris, France}
+  {M.Sc. in Computer Science}{2019 - 2022}
+\itemListStart
+  \myItem{Supervisor: Prof. Emmanuel Chailloux \& Prof. Jacques Malenfant}
+  \myItem{Research Focus: Algorithms, Software Science, and Technology}
+\itemListEnd
+
+\eduHeading
+  {Paris-Saclay University}{Paris, France}
+  {B.Sc. in Computer Science}{2016 - 2019}
+\vspace{-15pt}
+}
+
+% -------------------- PROFESSIONAL EXPERIENCE --------------------
+\sectionBlock{
+\section{Professional Experience}
+}{
+\eduHeading
+  {Distributed and Parallel Computing Lab, Huawei Paris Research Center}{Paris, France}
+  {Ph.D. Candidate (CIFRE) \& Research Engineer — LLM Training Systems}{2021 -- 2026 \footnotesize{\textit{(expected)}}}
+\itemListStart
+  \myItem{Built cost-model-driven planners for hybrid/pipeline-parallel LLM training: stage partitioning, pipeline scheduling, and re-computation selecting under feasibility (memory/performance) constraints.}
+  \myItem{Designed symbolic peak-memory estimation; integrated collective-cost modeling and overlap strategies for large-scale throughput/MFU tuning.}
+  \myItem{Productionized prototypes into deployable planning workflows with engineering/customer teams: actionable configuration guidance, debuggable traces, and regression benchmarking across model families and scales.}
+\itemListEnd
+{\footnotesize\textit{Role progression: Research Apprentice (2021--2022) $\rightarrow$ Research Engineer (2022--2023) $\rightarrow$ CIFRE Ph.D. Candidate (2023--2026).}}
+\vspace{-15pt}
+}
+
+% -------------------- SELECTED IMPACT PROJECTS --------------------
+% \sectionBlock{
+% \section{Selected Impact Projects}
+% }{
+% \projHeading{\textbf{BMPipe: Bubble--Memory Co-optimization Planner for Pipeline Parallel Training}}{CLUSTER 2025}{2023--2024}
+% \itemListStart
+%   \myItem{Symbolic cost model + ILP jointly optimizes stage boundaries, intra-stage chunking, and per-layer recomputation under memory constraints to minimize pipeline bubbles; up to 1.36$\times$ speedup and HBM utilization 83--92\% (validated up to 16,384 Ascend NPUs).}
+% \itemListEnd
+
+% \projHeading{\textbf{ManuMatic: Strategy Injection for Robust Auto Hybrid Parallelism}}{NPC 2025}{2024}
+% \itemListStart
+%   \myItem{Light-touch “manual + automatic” constraints treat user-provided operator shardings as first-class planning constraints; 2.24$\times$ on Mixtral-8$\times$7B and 2.04$\times$ on Llama3-8B vs.\ D-Rec; +30.1\% vs.\ expert-tuned plan on Qwen2.5-72B (64 devices, L=32K).}
+% \itemListEnd
+
+% \projHeading{\textbf{PRISM: Profiling-Free Symbolic Strategy Planner}}{HPC Asia 2026}{2025}
+% \itemListStart
+%   \myItem{Profiling-free analytic planner predicts peak memory and communication and searches hybrid parallelism + schedules under unified objectives and feasibility; 1.23$\times$--1.43$\times$ speedups and MFU 29.40\%$\rightarrow$36.20\% (validated up to 1,024 devices).}
+% \itemListEnd
+
+% \projHeading{\textbf{Two-level Optimization and Deployment for Large-Scale Training (H2O + Customer Rollout)}}{Euro-Par 2025 (Best Poster) \& Industry Deployment}{2025}
+% \itemListStart
+%   \myItem{Two-level workflow: Level-1 searches parallelism degrees and micro-batch size; Level-2 refines layer-to-stage mapping and adaptive recomputation under memory limits; MFU 26.13\%$\rightarrow$35.73\% and +36.72\% speedup on DeepSeek-141B (128 NPUs), transferred to production (1.1$\times$ on 4,096-device training; 2.37$\times$ on long-sequence training at 512 devices).}
+% \itemListEnd
+% \vspace{-15pt}
+% }
+
+% -------------------- AWARDS & HONORS --------------------
+\sectionBlock{
+\section{Awards\\and\\Honors}
+}{
+\awardListStart
+\item \emph{Golden Prize}, Huawei Challenge Award for Automatic Load Balancing \hfill 2024.08
+\item \emph{Best Poster Award}, Euro-Par conference \hfill 2025.08
+\item \emph{Letter of Appreciation}, China Telecom (DeepSeek-MoE training optimization deployment) \hfill 2025.12
+\awardListEnd
+\vspace{-15pt}
+}
+
+% -------------------- SKILLS --------------------
+% -------------------- SKILLS --------------------
+\sectionBlock{
+\section{Skills}
+}{
+\begin{multicols}{2}
+\raggedright
+\setlength{\multicolsep}{0pt} % optional: reduce vertical space around multicols
+
+\skillListStart
+  \item \emph{Languages}: Chinese (native), English (fluent), French (fluent), Cantonese
+  \item \emph{Programming}: Python, C++, Java
+  \item \emph{ML Frameworks}: MindSpore, PyTorch
+  \item \emph{Platforms}: large-scale GPU/NPU cluster and cloud 
+  \item \emph{Tooling}: Ascend profiling; tracing; performance regression benchmarking
+  \item \emph{Dev}: Linux, Git
+\skillListEnd
+
+\end{multicols}
+\vspace{-8pt}
+}
+
+
+\end{document}

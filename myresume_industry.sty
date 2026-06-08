@@ -1,0 +1,77 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{myresume_industry}[2026/04/10 Industry resume style]
+
+\usepackage[a4paper,left=0.95cm,right=0.95cm,top=0.82cm,bottom=0.82cm]{geometry}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{titlesec}
+
+\definecolor{Accent}{HTML}{0F3B5F}
+\definecolor{AccentSoft}{HTML}{EEF3F7}
+\definecolor{TextPrimary}{HTML}{1E2329}
+\definecolor{TextMuted}{HTML}{59626C}
+\definecolor{RuleColor}{HTML}{CDD8E2}
+
+\setmainfont{SabonLTStd}[
+    Path=./Fonts/Sabon/,
+    Extension=.ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic
+]
+\newfontfamily\Calluna{Calluna}[
+    Path=./Fonts/Calluna/,
+    Extension=.otf,
+    UprightFont=*-Regular
+]
+\newfontfamily\CronosLt{CronosProLT}[
+    Path=./Fonts/Cronos/,
+    Extension=.ttf,
+    UprightFont=*-Regular
+]
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\multicolsep}{0pt}
+\setlength{\columnsep}{0.42cm}
+\linespread{0.955}
+\emergencystretch=1.2em
+\hyphenpenalty=6000
+\exhyphenpenalty=6000
+
+\titleformat{\section}
+  {\CronosLt\fontsize{10.3pt}{10.6pt}\selectfont\color{Accent}\scshape}
+  {}{0pt}{}
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+\newcommand{\ResumeName}[1]{{\Calluna\fontsize{23pt}{24pt}\selectfont\color{TextPrimary}\textsc{#1}}}
+\newcommand{\ResumeRole}[1]{{\CronosLt\fontsize{9.4pt}{10pt}\selectfont\color{Accent}\scshape #1}}
+\newcommand{\TopRule}{\textcolor{RuleColor}{\rule{\textwidth}{0.8pt}}}
+
+\newcommand{\Entry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{3.2cm}@{}}
+    {\textbf{\color{TextPrimary}#1}} & {\footnotesize\color{TextMuted}#2} \\
+    {\textit{\footnotesize\color{TextMuted}#3}} & {\footnotesize\color{TextMuted}#4} \\
+  \end{tabularx}
+}
+
+\newcommand{\Subheading}[1]{{\textbf{\color{TextPrimary}#1}}}
+\newcommand{\Muted}[1]{{\color{TextMuted}#1}}
+\newcommand{\AccentLine}[1]{{\footnotesize\color{Accent}#1}}
+\newcommand{\InlineFact}[1]{{\footnotesize\color{TextMuted}#1}}
+
+\newcommand{\BulletListStart}{\begin{itemize}[leftmargin=1.08em,label=\textbullet,topsep=0.8pt,itemsep=0.85pt,parsep=0pt,partopsep=0pt]}
+\newcommand{\BulletListEnd}{\end{itemize}}
+\newcommand{\ResumeBullet}[1]{\item \footnotesize #1}
+
+\newcommand{\CompactListStart}{\begin{itemize}[leftmargin=1.0em,label=\textbullet,topsep=0.5pt,itemsep=0.65pt,parsep=0pt,partopsep=0pt]}
+\newcommand{\CompactListEnd}{\end{itemize}}
+\newcommand{\CompactItem}[1]{\item \fontsize{7.9pt}{8.6pt}\selectfont #1}
