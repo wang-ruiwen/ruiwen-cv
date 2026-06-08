@@ -15,11 +15,11 @@
 \usepackage{multicol}
 
 % ---- Colours (shared with the modern English template) ----
-\definecolor{Accent}{HTML}{173754}
-\definecolor{AccentSoft}{HTML}{EAF1F6}
-\definecolor{TextPrimary}{HTML}{1B1F24}
-\definecolor{TextMuted}{HTML}{5E6772}
-\definecolor{RuleColor}{HTML}{D7E0E8}
+\definecolor{Accent}{HTML}{16456A}
+\definecolor{AccentSoft}{HTML}{EDF2F7}
+\definecolor{TextPrimary}{HTML}{1A222C}
+\definecolor{TextMuted}{HTML}{5C6773}
+\definecolor{RuleColor}{HTML}{D7DEE5}
 
 % ---- Latin font: reuse the bundled Sabon for a consistent look ----
 % (CJK fonts are handled by ctex via the chosen fontset.)
@@ -31,6 +31,9 @@
     ItalicFont=*-Italic,
     BoldItalicFont=*-BoldItalic
 ]
+\newfontfamily\HeadFont{Lato}[Path=./Fonts/Lato/,Extension=.ttf,UprightFont=*-Regular,BoldFont=*-Bold,ItalicFont=*-Italic,BoldItalicFont=*-BoldItalic]
+\newfontfamily\HeadSemi{Lato}[Path=./Fonts/Lato/,Extension=.ttf,UprightFont=*-Semibold,ItalicFont=*-SemiboldItalic]
+\newfontfamily\HeadMed{Lato}[Path=./Fonts/Lato/,Extension=.ttf,UprightFont=*-Medium]
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
@@ -40,7 +43,7 @@
 
 % ---- Header macros ----
 \newcommand{\ResumeName}[1]{{\heiti\fontsize{24pt}{26pt}\selectfont\color{TextPrimary}#1}}
-\newcommand{\ResumeNameEn}[1]{{\fontsize{14pt}{16pt}\selectfont\color{TextMuted}\textsc{#1}}}
+\newcommand{\ResumeNameEn}[1]{{\HeadMed\fontsize{13pt}{16pt}\selectfont\color{TextMuted}#1}}
 \newcommand{\ResumeRole}[1]{{\heiti\fontsize{10.8pt}{12pt}\selectfont\color{Accent}#1}}
 \newcommand{\AccentRule}{\textcolor{RuleColor}{\rule{\textwidth}{0.8pt}}}
 

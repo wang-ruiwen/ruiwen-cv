@@ -11,11 +11,11 @@
 \usepackage{multicol}
 \usepackage{array}
 
-\definecolor{Accent}{HTML}{173754}
-\definecolor{AccentSoft}{HTML}{EAF1F6}
-\definecolor{TextPrimary}{HTML}{1B1F24}
-\definecolor{TextMuted}{HTML}{5E6772}
-\definecolor{RuleColor}{HTML}{D7E0E8}
+\definecolor{Accent}{HTML}{16456A}
+\definecolor{AccentSoft}{HTML}{EDF2F7}
+\definecolor{TextPrimary}{HTML}{1A222C}
+\definecolor{TextMuted}{HTML}{5C6773}
+\definecolor{RuleColor}{HTML}{D7DEE5}
 
 \setmainfont{SabonLTStd}[
     Path=./Fonts/Sabon/,
@@ -40,6 +40,9 @@
     Extension=.ttf,
     UprightFont=*-Regular
 ]
+\newfontfamily\HeadFont{Lato}[Path=./Fonts/Lato/,Extension=.ttf,UprightFont=*-Regular,BoldFont=*-Bold,ItalicFont=*-Italic,BoldItalicFont=*-BoldItalic]
+\newfontfamily\HeadSemi{Lato}[Path=./Fonts/Lato/,Extension=.ttf,UprightFont=*-Semibold,ItalicFont=*-SemiboldItalic]
+\newfontfamily\HeadMed{Lato}[Path=./Fonts/Lato/,Extension=.ttf,UprightFont=*-Medium]
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
@@ -50,14 +53,14 @@
 
 \renewcommand{\emph}[1]{\textbf{\color{Accent}#1}}
 
-\newcommand{\ResumeName}[1]{{\Calluna\fontsize{28pt}{30pt}\selectfont\color{TextPrimary}\textsc{#1}}}
-\newcommand{\ResumeRole}[1]{{\CronosLt\fontsize{10.8pt}{12pt}\selectfont\color{Accent}\textsc{#1}}}
+\newcommand{\ResumeName}[1]{{\HeadSemi\fontsize{27pt}{29pt}\selectfont\color{TextPrimary}#1}}
+\newcommand{\ResumeRole}[1]{{\HeadMed\fontsize{10.5pt}{12.5pt}\selectfont\color{Accent}#1}}
 \newcommand{\AccentRule}{\textcolor{RuleColor}{\rule{\textwidth}{0.8pt}}}
 
 \newcommand{\SectionLabel}[1]{%
   \colorbox{AccentSoft}{%
-    \parbox[c][0.95cm][c]{2.7cm}{%
-      \centering\CronosLt\fontsize{10.5pt}{11pt}\selectfont\color{Accent}\textsc{#1}%
+    \parbox[c][0.86cm][c]{2.55cm}{%
+      \centering{\HeadSemi\fontsize{9.6pt}{11pt}\selectfont\color{Accent}#1}%
     }%
   }%
 }
