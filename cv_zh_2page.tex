@@ -42,11 +42,12 @@
 
 % -------------------- 研究专长 --------------------
 \cvsection{研究专长}
+\small 博士论文：《面向大规模分布式训练的混合并行系统化与可移植优化》（索邦大学，EDITE ED 130 博士学院）。以 Transformer 单层为统一推理单元，构建“行为级”规划工作流，回答\textbf{如何高效地为大规模混合并行训练做规划}。四项能力，各由一个系统实现：
 \itemListStart
-  \myItem{可扩展 LLM/DNN 训练系统：张量 / 数据 / 流水线 / 专家混合并行策略设计、阶段划分、微批次调度。}
-  \myItem{系统协同优化的原理性建模：符号化性能与峰值显存建模、可行性分析、大规模集群验证方法。}
-  \myItem{优化式规划算法：以约束规划与整数线性规划联合优化显存、通信与吞吐。}
-  \myItem{科研到生产的转化：可复现的基准测试与可部署流程，与工程及平台团队协作落地。}
+  \myItem{\textbf{可预测性 —— PRISM}：层级符号化代价曲面，从模型、训练配置与硬件描述预测算力、峰值显存与通信，无需性能采样。}
+  \myItem{\textbf{互操作性 —— BMPipe + H2O}：将规划分解为内层调度/显存问题与外层并行度选择（数据/张量/流水线/虚拟流水线/序列/专家/优化器），并以 ILP/MILP 联合求解。}
+  \myItem{\textbf{可演进性 —— Concord}：保持有效性的复用契约，仅对模型或配置变更失效的部分重新规划，避免从零重启。}
+  \myItem{\textbf{自适应性 —— ManuMatic}：运行时策略注入，当实际执行偏离所用抽象模型时修正规划决策。}
 \itemListEnd
 
 % -------------------- 工作经历 --------------------
@@ -88,9 +89,10 @@
   \item \textbf{Ruiwen Wang}, Chong Li, Thibaut Tachon, Raja Appuswamy, Teng Su. \textit{BMPipe: Bubble-Memory Co-optimization Strategy Planner for Very-Large DNN Training.} IEEE CLUSTER 2025.
   \item \textbf{Ruiwen Wang}, Chong Li, Raja Appuswamy, Yujie Yuan. \textit{H2O: Holistic Hyperparameter Optimization for Large-Scale Deep Neural Network Training.} Euro-Par 2025.\;\textbf{（最佳海报奖 / Best Poster Award）}
   \item \textbf{Ruiwen Wang}, Chong Li, Hongxing Wang, Raja Appuswamy, Yujie Yuan. \textit{ManuMatic: Strategy Injection for Robust Automatic Hybrid Parallelism in Distributed DNN Training.} NPC 2025.
-  \item Xinzhang Liu, Chao Wang, Zhihua Yang, Zhuo Jiang, \textbf{Ruiwen Wang}, et al. \textit{Training Report of TeleChat3-MoE.} arXiv preprint, 2025.
   \item \textbf{Ruiwen Wang}, Philippe Fang, Chong Li, Thibaut Tachon, Raja Appuswamy. \textit{PRISM: Profiling-Free Symbolic Memory-Driven Strategy Planner for Large DNN Model Training.} HPC Asia 2026.
+  \item \textbf{Ruiwen Wang}, Thibaut Tachon, Chong Li, Raja Appuswamy. \textit{Can Hybrid-Parallel Planning Support Alternating Model--Strategy Design? Dependency-Keyed Per-Layer Primitives for Re-Planning.}\;（审稿中 / under submission, 2026）
   \item Zhengdao Yu, \textbf{Ruiwen Wang}, Nelson Lossing, Chong Li. \textit{MLLM Pipeline Bubble Modeling for Large-Scale Training.} HPC Asia 2026.
+  \item Xinzhang Liu, Chao Wang, Zhihua Yang, Zhuo Jiang, \textbf{Ruiwen Wang}, et al. \textit{Training Report of TeleChat3-MoE.} arXiv:2512.24157, 2025.
 \pubListEnd
 
 % -------------------- 专利 --------------------
@@ -108,7 +110,7 @@
   {索邦大学 \& EURECOM}{法国，巴黎}
   {计算机科学博士；导师：Prof. Raja Appuswamy、Prof. Chong Li}{2023 \textemdash{} 2026（预计）}
 \itemListStart
-  \myItem{研究课题：使用并行计算技术实现分布式学习的系统化与可移植加速。}
+  \myItem{博士论文：面向大规模分布式训练的混合并行系统化与可移植优化（EDITE ED 130 博士学院）。}
 \itemListEnd
 \cventry
   {索邦大学}{法国，巴黎}

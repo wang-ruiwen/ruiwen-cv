@@ -56,11 +56,12 @@ Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University and EURECOM, 
 }
 
 \sectionBlock{Research Focus}{
+{\small Doctoral thesis: \textit{Systematic and Portable Optimisation of Hybrid Parallelism for Large-Scale Distributed Training} (Sorbonne University, doctoral school EDITE ED 130). A behaviour-level planning workflow built on a shared per-layer (Transformer) unit of reasoning, addressing one question: how can large-scale hybrid-parallel training be planned efficiently? Four capabilities, each realised as a system:}
 \itemListStart
-  \myItem{Scalable LLM and DNN training systems: hybrid parallelism design across tensor, data, pipeline, and expert dimensions; stage partitioning; micro-batch scheduling.}
-  \myItem{Principled system modeling: symbolic performance and peak-memory models, feasibility analysis, and large-cluster validation methodology.}
-  \myItem{Optimization-based planning: ILP and constraint-programming formulations that jointly optimize memory, communication, and throughput.}
-  \myItem{Research-to-production transfer: deployable planning workflows, reproducible benchmarking, actionable traces, and collaboration with platform and customer teams.}
+  \myItem{\textbf{Predictability --- PRISM}: a layer-level symbolic cost surface predicting compute, peak memory, and communication from model, training-config, and hardware descriptions, without profiling.}
+  \myItem{\textbf{Interoperability --- BMPipe + H2O}: factor planning into an inner schedule/memory problem and an outer choice of parallelism degrees (data, tensor, pipeline, virtual-pipeline, sequence, expert, optimiser), optimised jointly via ILP/MILP.}
+  \myItem{\textbf{Evolvability --- Concord}: a validity-preserving reuse contract that re-plans only the parts a model or configuration change invalidates, instead of restarting from scratch.}
+  \myItem{\textbf{Adaptability --- ManuMatic}: runtime strategy injection that corrects planning decisions when observed execution diverges from the abstraction used to choose them.}
 \itemListEnd
 }
 
@@ -94,9 +95,10 @@ Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University and EURECOM, 
   \item \textbf{Ruiwen Wang}, Chong Li, Thibaut Tachon, Raja Appuswamy, Teng Su. \textit{BMPipe: Bubble-Memory Co-optimization Strategy Planner for Very-Large DNN Training}. IEEE CLUSTER 2025.
   \item \textbf{Ruiwen Wang}, Chong Li, Raja Appuswamy, Yujie Yuan. \textit{H2O: Holistic Hyperparameter Optimization for Large-Scale Deep Neural Network Training}. Euro-Par 2025. \textbf{Best Poster Award}.
   \item \textbf{Ruiwen Wang}, Chong Li, Hongxing Wang, Raja Appuswamy, Yujie Yuan. \textit{ManuMatic: Strategy Injection for Robust Automatic Hybrid Parallelism in Distributed DNN Training}. NPC 2025.
-  \item Xinzhang Liu, Chao Wang, Zhihua Yang, Zhuo Jiang, \textbf{Ruiwen Wang}, et al. \textit{Training Report of TeleChat3-MoE}. arXiv preprint, 2025.
   \item \textbf{Ruiwen Wang}, Philippe Fang, Chong Li, Thibaut Tachon, Raja Appuswamy. \textit{PRISM: Profiling-Free Symbolic Memory-Driven Strategy Planner for Large DNN Model Training}. HPC Asia 2026.
+  \item \textbf{Ruiwen Wang}, Thibaut Tachon, Chong Li, Raja Appuswamy. \textit{Can Hybrid-Parallel Planning Support Alternating Model--Strategy Design? Dependency-Keyed Per-Layer Primitives for Re-Planning}. Under submission, 2026.
   \item Zhengdao Yu, \textbf{Ruiwen Wang}, Nelson Lossing, Chong Li. \textit{MLLM Pipeline Bubble Modeling for Large-Scale Training}. HPC Asia 2026.
+  \item Xinzhang Liu, Chao Wang, Zhihua Yang, Zhuo Jiang, \textbf{Ruiwen Wang}, et al. \textit{Training Report of TeleChat3-MoE}. arXiv:2512.24157, 2025.
 \pubListEnd
 }
 
@@ -116,8 +118,8 @@ Ph.D. (CIFRE) candidate in Computer Science at Sorbonne University and EURECOM, 
   {Ph.D. in Computer Science}
   {2023 -- 2026 (expected)}
 \itemListStart
-  \myItem{Supervisors: Prof. Raja Appuswamy and Prof. Chong Li}
-  \myItem{Research topic: Systematic and Portable Acceleration of Distributed Learning using Parallel Computing Techniques}
+  \myItem{Supervisors: Prof. Raja Appuswamy and Prof. Chong Li; doctoral school EDITE (ED 130)}
+  \myItem{Thesis: Systematic and Portable Optimisation of Hybrid Parallelism for Large-Scale Distributed Training}
 \itemListEnd
 
 \cvEntry
