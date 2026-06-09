@@ -12,7 +12,7 @@
 \usepackage[unicode]{hyperref}
 \hypersetup{colorlinks=true, urlcolor=Accent, linkcolor=Accent}
 
-\linespread{1.16}
+\linespread{1.08}
 % 一页版: 段落间距
 \renewcommand{\cvsection}[1]{%
   \par\vspace{6pt}%
@@ -49,7 +49,7 @@
   {华为巴黎研究所 \textemdash{} 分布式与并行计算实验室}{法国，巴黎}
   {博士研究生（CIFRE）兼研究工程师 \textemdash{} 大模型训练系统}{2021 \textemdash{} 2026 年底}
 \itemListStart
-  \myItem{构建基于代价模型的混合 / 流水线并行训练规划器：搜索阶段划分、流水线调度与重计算策略。}
+  \myItem{构建基于代价模型的混合并行训练规划器：在多维并行空间中搜索并行度配置、阶段划分、流水线调度与重计算策略。}
   \myItem{设计符号化峰值显存与集合通信代价模型，支撑执行前的可行性判断与性能预测。}
   \myItem{开展显存与性能分析及 profiling：算子级性能剖析、显存 / 通信占用分析与瓶颈定位，指导吞吐与 MFU 调优。}
   \myItem{将研究原型产品化为可部署规划流程，与工程及客户团队协作，推动向生产级训练环境的技术转化。}
@@ -60,25 +60,28 @@
 \cvsection{核心成果（大模型可移植规划调优系统，覆盖多种并行维度联合优化）}
 \itemListStart
   \myItem{\textbf{PRISM}（HPC Asia 2026，\emph{可预测性 / 显存}）：免性能采样地解析预测各阶段峰值显存与通信，使显存可行性成为可移植、跨集群复用的闭式判断。}
-  \myItem{\textbf{BMPipe}（CLUSTER 2025，\emph{流水线效率}）：符号化气泡模型 + ILP 联合优化阶段边界 / 分块 / 重计算，压缩空泡；1.36$\times$，HBM 83\textendash92\%，验证至 16,384 张 Ascend NPU。}
-  \myItem{\textbf{H2O}（Euro-Par 2025 最佳海报奖，\emph{全维度联合优化}）：单一工作流联合优化所有并行维度 + 微批 + 自适应重计算；DeepSeek-141B 上 MFU 26.13\%$\to$35.73\%，并转生产。}
+  \myItem{\textbf{BMPipe}（CLUSTER 2025，\emph{流水线效率}）：符号化气泡模型 + ILP 联合优化阶段边界 / 分块 / 重计算，压缩流水线空泡；最高 1.36$\times$ 吞吐提升。}
+  \myItem{\textbf{H2O}（Euro-Par 2025 最佳海报奖，\emph{全维度联合优化}）：单一工作流联合优化所有并行维度 + 微批 + 自适应重计算，并已转生产；MFU 26.13\%$\to$35.73\%。}
   \myItem{\textbf{Concord}（审稿中 2026，\emph{搜索效率 / 减少冗余}）：依赖键控逐层签名只重算模型 / 配置改动失效的部分、复用其余，避免冗余搜索。}
-  \myItem{\textbf{ManuMatic}（NPC 2025，\emph{面向新算子的自适应}）：将算子切分作为一等约束注入自动搜索，对未建模的新算子 / 影响保持稳健；Qwen2.5-72B 上较专家方案 +30.1\%。}
+  \myItem{\textbf{ManuMatic}（NPC 2025，\emph{面向新算子的自适应}）：将算子切分作为一等约束注入自动搜索，对未建模的新算子 / 影响保持稳健，在纯自动搜索退化处恢复优质方案。}
 \itemListEnd
 
 % -------------------- 论文与专利 --------------------
 \cvsection{论文与专利}
 \footnotesize
-\textbf{论文（第一 / 共同作者，节选）}：BMPipe（IEEE CLUSTER 2025）；H2O（Euro-Par 2025，最佳海报奖）；ManuMatic（NPC 2025）；PRISM 与 MLLM Pipeline Bubble Modeling（HPC Asia 2026）；Concord（依赖键控重规划，审稿中 2026）；Training Report of TeleChat3-MoE（arXiv:2512.24157）。\par
+\textbf{论文}：第一作者 4 篇（IEEE CLUSTER、Euro-Par 最佳海报奖、IFIP NPC、HPC Asia）+ 1 篇在投；合作 2 篇——MLLM Pipeline Bubble Modeling（HPC Asia 2026）、TeleChat3-MoE 训练报告（arXiv:2512.24157）。完整列表见 Google Scholar。\par
 \vspace{2pt}
 \textbf{专利（3 项）}：机器学习模型执行计划生成（WO 2025/020165 A1）、大模型负载均衡方法、大模型训练多维并行配置方法。
 
 % -------------------- 教育背景 --------------------
 \cvsection{教育背景}
 \footnotesize
-\textbf{索邦大学 \& EURECOM} —— 计算机科学博士（混合并行系统化与可移植优化；导师 Prof. Raja Appuswamy、Prof. Chong Li）\hfill {\color{TextMuted}2023 \textemdash{} 2026 年底}\\
-\textbf{索邦大学} —— 计算机科学硕士（算法、软件科学与技术）\hfill {\color{TextMuted}2019 \textemdash{} 2022}\\
-\textbf{巴黎-萨克雷大学} —— 计算机科学学士（早期研究受 Prof. Isabelle Guyon、Dr. Viviane Pons、Dr. Zhengying Liu 指导）\hfill {\color{TextMuted}2016 \textemdash{} 2019}
+\textbf{索邦大学 \& EURECOM}\hfill {\color{TextMuted}2023 \textemdash{} 2026 年底}\\
+计算机科学博士（混合并行系统化与可移植优化；导师 Prof. Raja Appuswamy、Prof. Chong Li）\\[1.5pt]
+\textbf{索邦大学}\hfill {\color{TextMuted}2019 \textemdash{} 2022}\\
+计算机科学硕士（算法、软件科学与技术）\\[1.5pt]
+\textbf{巴黎-萨克雷大学}\hfill {\color{TextMuted}2016 \textemdash{} 2019}\\
+计算机科学学士（早期研究受 Prof. Isabelle Guyon、Dr. Viviane Pons、Dr. Zhengying Liu 指导）
 
 % -------------------- 关键词 --------------------
 \cvsection{关键词}
