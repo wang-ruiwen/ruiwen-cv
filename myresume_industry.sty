@@ -12,11 +12,11 @@
 \usepackage{multicol}
 \usepackage{titlesec}
 
-\definecolor{Accent}{HTML}{16456A}
-\definecolor{AccentSoft}{HTML}{EDF2F7}
-\definecolor{TextPrimary}{HTML}{1A222C}
-\definecolor{TextMuted}{HTML}{5C6773}
-\definecolor{RuleColor}{HTML}{D7DEE5}
+\definecolor{Accent}{HTML}{1A5266}
+\definecolor{AccentSoft}{HTML}{E9F0F2}
+\definecolor{TextPrimary}{HTML}{1E2630}
+\definecolor{TextMuted}{HTML}{66707E}
+\definecolor{RuleColor}{HTML}{DBE2E8}
 
 \setmainfont{SabonLTStd}[
     Path=./Fonts/Sabon/,
@@ -50,10 +50,11 @@
 \hyphenpenalty=6000
 \exhyphenpenalty=6000
 
+\newcommand{\cvmark}{\textcolor{Accent}{\rule[0.3ex]{0.42ex}{0.42ex}}}
 \titleformat{\section}
-  {\HeadSemi\fontsize{9.8pt}{10.6pt}\selectfont\color{Accent}}
-  {}{0pt}{}
-\titlespacing*{\section}{0pt}{5pt}{2pt}
+  {\HeadSemi\addfontfeatures{LetterSpace=7.0}\fontsize{8.7pt}{9.6pt}\selectfont\color{Accent}}
+  {}{0pt}{\MakeUppercase}[{\color{RuleColor}\titlerule[0.5pt]}]
+\titlespacing*{\section}{0pt}{4.5pt}{2.2pt}
 
 \newcommand{\ResumeName}[1]{{\HeadSemi\fontsize{22pt}{24pt}\selectfont\color{TextPrimary}#1}}
 \newcommand{\ResumeRole}[1]{{\HeadMed\fontsize{9.4pt}{10.5pt}\selectfont\color{Accent}#1}}
@@ -71,10 +72,10 @@
 \newcommand{\AccentLine}[1]{{\footnotesize\color{Accent}#1}}
 \newcommand{\InlineFact}[1]{{\footnotesize\color{TextMuted}#1}}
 
-\newcommand{\BulletListStart}{\begin{itemize}[leftmargin=1.08em,label=\textbullet,topsep=0.8pt,itemsep=0.85pt,parsep=0pt,partopsep=0pt]}
+\newcommand{\BulletListStart}{\begin{itemize}[leftmargin=1.08em,label=\cvmark,topsep=0.8pt,itemsep=0.85pt,parsep=0pt,partopsep=0pt]}
 \newcommand{\BulletListEnd}{\end{itemize}}
 \newcommand{\ResumeBullet}[1]{\item \footnotesize #1}
 
-\newcommand{\CompactListStart}{\begin{itemize}[leftmargin=1.0em,label=\textbullet,topsep=0.5pt,itemsep=0.65pt,parsep=0pt,partopsep=0pt]}
+\newcommand{\CompactListStart}{\begin{itemize}[leftmargin=1.0em,label=\cvmark,topsep=0.5pt,itemsep=0.65pt,parsep=0pt,partopsep=0pt]}
 \newcommand{\CompactListEnd}{\end{itemize}}
 \newcommand{\CompactItem}[1]{\item \fontsize{7.9pt}{8.6pt}\selectfont #1}

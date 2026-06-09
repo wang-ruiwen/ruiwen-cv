@@ -15,11 +15,12 @@
 \usepackage{multicol}
 
 % ---- Colours (shared with the modern English template) ----
-\definecolor{Accent}{HTML}{16456A}
-\definecolor{AccentSoft}{HTML}{EDF2F7}
-\definecolor{TextPrimary}{HTML}{1A222C}
-\definecolor{TextMuted}{HTML}{5C6773}
-\definecolor{RuleColor}{HTML}{D7DEE5}
+\definecolor{Accent}{HTML}{1A5266}
+\definecolor{AccentSoft}{HTML}{E9F0F2}
+\definecolor{TextPrimary}{HTML}{1E2630}
+\definecolor{TextMuted}{HTML}{66707E}
+\definecolor{RuleColor}{HTML}{DBE2E8}
+\newcommand{\cvmark}{\textcolor{Accent}{\rule[0.3ex]{0.45ex}{0.45ex}}}
 
 % ---- Latin font: reuse the bundled Sabon for a consistent look ----
 % (CJK fonts are handled by ctex via the chosen fontset.)
@@ -67,14 +68,14 @@
 }
 
 % ---- Lists ----
-\newcommand{\itemListStart}{\begin{itemize}[leftmargin=1.25em,label=\textbullet,topsep=2pt,itemsep=3pt,parsep=0pt,partopsep=0pt]}
+\newcommand{\itemListStart}{\begin{itemize}[leftmargin=1.25em,label=\cvmark,topsep=2pt,itemsep=3pt,parsep=0pt,partopsep=0pt]}
 \newcommand{\itemListEnd}{\end{itemize}}
 \newcommand{\myItem}[1]{\item \small #1}
 
 \newcommand{\pubListStart}{\begin{enumerate}[leftmargin=1.6em,topsep=2pt,itemsep=2.5pt,parsep=0pt,partopsep=0pt]}
 \newcommand{\pubListEnd}{\end{enumerate}}
 
-\newcommand{\awardListStart}{\begin{itemize}[leftmargin=1.15em,label=\textbullet,topsep=1pt,itemsep=1.8pt,parsep=0pt,partopsep=0pt]}
+\newcommand{\awardListStart}{\begin{itemize}[leftmargin=1.15em,label=\cvmark,topsep=1pt,itemsep=1.8pt,parsep=0pt,partopsep=0pt]}
 \newcommand{\awardListEnd}{\end{itemize}}
 
 \newcommand{\skillListStart}{\begin{itemize}[leftmargin=0pt,label={},topsep=0pt,itemsep=2pt,parsep=0pt,partopsep=0pt]}

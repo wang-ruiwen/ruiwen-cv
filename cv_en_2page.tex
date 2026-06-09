@@ -11,18 +11,12 @@
 \linespread{1.04}
 
 % --- Denser label column + tighter section spacing ---
-\renewcommand{\SectionLabel}[1]{%
-  \colorbox{AccentSoft}{%
-    \parbox[c][0.78cm][c]{2.5cm}{%
-      \centering{\HeadSemi\fontsize{9pt}{10.5pt}\selectfont\color{Accent}#1}%
-    }%
-  }%
-}
+\renewcommand{\SectionLabel}[1]{\raggedleft{\HeadSemi\addfontfeatures{LetterSpace=5.0}\fontsize{8.3pt}{10.5pt}\selectfont\color{Accent}\MakeUppercase{#1}}\par}
 \renewcommand{\sectionBlock}[2]{%
   \noindent
-  \begin{minipage}[t]{2.6cm}\vspace{0pt}\SectionLabel{#1}\end{minipage}%
+  \begin{minipage}[t]{2.55cm}\vspace{1.5pt}\SectionLabel{#1}\end{minipage}%
   \hfill
-  \begin{minipage}[t]{15.75cm}\vspace{0pt}\raggedright #2\end{minipage}%
+  \begin{minipage}[t]{15.8cm}\vspace{0pt}\raggedright #2\end{minipage}%
   \vspace{7pt}%
 }
 
